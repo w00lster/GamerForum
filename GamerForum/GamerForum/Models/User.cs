@@ -6,5 +6,6 @@ using System.Web;
 namespace GamerForum.Models
 {
     public class User{
+        public int Age { get; set; }
     }
 }
