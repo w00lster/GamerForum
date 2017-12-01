@@ -18,6 +18,9 @@ namespace GamerForum.Models
         public string Image { get; set; }
         public int Age { get; set; }
         public DateTime Day_created { get; set; }
+        public ICollection<Status> Status { get; set; }
+        public ICollection<Wanted_games> Wanted_games { get; set; }
+        public ICollection<Ratings> Ratings { get; set; }
         
    
     }

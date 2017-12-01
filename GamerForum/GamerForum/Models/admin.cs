@@ -6,12 +6,11 @@ using System.Web;
 
 namespace GamerForum.Models
 {
-    public class Genres
-    {
+    public class Admin{
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Genre_id { get; set; }
-        public string Genre_name { get; set; }
-        public ICollection<Games> Game { get; set; }
-       
+        public int Admin_id { get; set; }
+        public string Admin_name { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
     }
 }

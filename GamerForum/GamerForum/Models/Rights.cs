@@ -11,7 +11,7 @@ namespace GamerForum.Models
     {
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Rights_id { get; set; }
-        public string Rights_name { get; set }
-
+        public string Rights_name { get; set; }
+        public ICollection<Status> Status_rights { get; set; }
     }
 }

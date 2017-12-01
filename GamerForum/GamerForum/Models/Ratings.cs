@@ -12,6 +12,7 @@ namespace GamerForum.Models
         public int Rating_id { get; set; }
         public double Rating_value { get; set; }
 
-        public ICollection<Status> Status { get; set; }
+        public ICollection<Users> User { get; set; }
+        public ICollection<Games> Game { get; set; }
     }
 }

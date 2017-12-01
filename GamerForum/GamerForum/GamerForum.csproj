@@ -152,14 +152,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\GamerForumContext.cs" />
+    <Compile Include="DAL\GamerForumContext.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Games.cs" />
     <Compile Include="Models\Genres.cs" />
     <Compile Include="Models\Images.cs" />
     <Compile Include="Models\Ratings.cs" />
     <Compile Include="Models\Rights.cs" />
     <Compile Include="Models\Status.cs" />
-    <Compile Include="Models\Status_rights.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\Wanted_games.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
