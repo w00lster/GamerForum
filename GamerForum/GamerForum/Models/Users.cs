@@ -9,7 +9,8 @@ namespace GamerForum.Models
 {
     public class Users{
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int User_id { get; set; }
+        [Key]
+        public int UserId { get; set; }
         public string First_name { get; set; }
         public string Last_name { get; set; }
         public string User_name { get; set; }

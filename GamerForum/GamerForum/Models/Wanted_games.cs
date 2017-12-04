@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,10 @@ namespace GamerForum.Models
     public class Wanted_games
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int wanted_game_id { get; set; }
-        public string wanted_game_name { get; set; }
-        public string wanted_game_url { get; set; }
+        [Key]
+        public int Wanted_Game_Id { get; set; }
+        public string Wanted_Game_Name { get; set; }
+        public string Wanted_Game_Url { get; set; }
         public ICollection<Users> Users { get; set; }
     }
 }

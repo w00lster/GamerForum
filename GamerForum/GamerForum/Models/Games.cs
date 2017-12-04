@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,8 +10,9 @@ namespace GamerForum.Models
     public class Games
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Game_id { get; set; }
-        public int Admin_id { get; set; }
+        [Key]
+        public int GameId { get; set; }
+        public int AdminID { get; set; }
         public string Game_name { get; set; }
         public string Game_url { get; set; }
         public string Description { get; set; }

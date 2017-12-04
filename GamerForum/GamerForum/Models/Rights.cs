@@ -9,8 +9,9 @@ namespace GamerForum.Models
 {
     public class Rights
     {
-       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Rights_id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        public int RightId { get; set; }
         public string Rights_name { get; set; }
         public ICollection<Status> Status { get; set; }
     }
