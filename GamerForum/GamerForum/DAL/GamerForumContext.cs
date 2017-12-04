@@ -13,6 +13,7 @@ namespace GamerForum.Models
         }
 
         public DbSet<Users> User { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<Games> Game { get; set; }
         public DbSet<Genres> Genre { get; set; }
         public DbSet<Rights> Right { get; set; }
@@ -24,7 +25,7 @@ namespace GamerForum.Models
         {
             modelBuilder.Entity<Status>().
                HasMany(c => c.Right).
-               WithMany(p => p.Status_rights).
+               WithMany(p => p.Status).
                Map(m =>
                {
                    m.MapLeftKey("Status_id");
@@ -34,7 +35,7 @@ namespace GamerForum.Models
 
             modelBuilder.Entity<Users>().
                 HasMany(c => c.Status).
-                WithMany(p => p.User_status).
+                WithMany(p => p.User).
                 Map(m =>
                 {
                     m.MapLeftKey("Users_id");

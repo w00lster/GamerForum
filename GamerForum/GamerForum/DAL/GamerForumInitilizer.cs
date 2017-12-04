@@ -20,6 +20,7 @@ namespace GamerForum.DAL
                 new Admin{Admin_name ="Mette", Email = "#", Password = "1234567c"},
                 new Admin{Admin_name ="kristine", Email = "#", Password ="1234567d"}
             };
+            admins.ForEach(a => context.Admins.AddOrUpdate(p => p.Admin_name, a));
             context.SaveChanges();
 
             var users = new List<Users>
@@ -29,6 +30,7 @@ namespace GamerForum.DAL
                 new Users{User_name = "Prinsesse", First_name = "Ariel Tornerose", Last_name = "Darling", Age=22, Email = "Prinsesse@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
                 new Users{User_name = "Ellibelly", First_name = "Elliot", Last_name = "Fluff", Age=19, Email = "Elliot@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()}
             };
+            users.ForEach(u => context.User.AddOrUpdate(p => p.User_id, u));
             context.SaveChanges();
 
             var ratings = new List<Ratings>
@@ -44,6 +46,7 @@ namespace GamerForum.DAL
                 new Ratings{Rating_value = 9.00, Game = new List<Games>(), User = new List<Users>()},
                 new Ratings{Rating_value = 10.00, Game = new List<Games>(), User = new List<Users>()}
             };
+            ratings.ForEach(r => context.Rating.AddOrUpdate(p => p.Rating_value, r));
             context.SaveChanges();
 
             var genres = new List<Genres>
@@ -56,6 +59,7 @@ namespace GamerForum.DAL
                 new Genres{Genre_name = "Family", Game = new List<Games>()},
                 new Genres{Genre_name = "Kids", Game = new List<Games>()}
             };
+            genres.ForEach(g => context.Genre.AddOrUpdate(p => p.Genre_name, g));
             context.SaveChanges();
 
             var games = new List<Games>
@@ -66,6 +70,7 @@ namespace GamerForum.DAL
                 new Games {Game_name= "Fuld af løgn", Game_time ="45-60 min", Description ="løgn og latin", Number_of_Players ="2-6", Year_releashed = 2007, Admin_id = 4, Genre = new List<Genres>(), Rating = new List<Ratings>()},
                 new Games {Game_name= "Uno", Game_time ="10-20 min", Description = "+4 kort", Number_of_Players ="2+", Year_releashed = 1900, Admin_id = 1, Genre = new List<Genres>(), Rating = new List<Ratings>()}
             };
+            games.ForEach(ga => context.Game.AddOrUpdate(p => p.Game_name, ga));
             context.SaveChanges();
 
             var rights = new List<Rights>
@@ -75,6 +80,7 @@ namespace GamerForum.DAL
                 new Rights {Rights_name = "Update", Status = new List<Status>()},
                 new Rights {Rights_name = "Delete", Status = new List<Status>()}
             };
+            rights.ForEach(ri => context.Right.AddOrUpdate(p => p.Rights_name, ri));
             context.SaveChanges();
 
             var status = new List<Status>
@@ -84,6 +90,7 @@ namespace GamerForum.DAL
                 new Status {Status_name = "User", Right = new List<Rights>(), User = new List<Users>()},
                 new Status {Status_name = "Guest", Right = new List<Rights>(), User = new List<Users>()}
             };
+            status.ForEach(s => context.Status.AddOrUpdate(p => p.Status_name, s));
             context.SaveChanges();
 
             var wanted_games = new List<Wanted_games>
@@ -93,7 +100,21 @@ namespace GamerForum.DAL
                 new Wanted_games{wanted_game_name= "Monopoly", Users = new List<Users>()},
                 new Wanted_games{wanted_game_name= "Munchkin", Users = new List<Users>()}
             };
+            wanted_games.ForEach(w => context.Wanted_game.AddOrUpdate(p => p.wanted_game_name, w));
             context.SaveChanges();
+
+            AddOrUpdateGenre(context, "Deck building", "Marvel Legendary");
+            context.SaveChanges();
+
+        }
+
+        void AddOrUpdateGenre(GamerForumContext context, string genre, string game_name)
+        {
+            var gen = context.Genre.SingleOrDefault(g => g.Genre_name == genre);
+            var gam = context.Game.SingleOrDefault(ga => ga.Game_name == game_name);
+
+            if (gam == null)
+                gen.Game.Add(context.Game.SingleOrDefault(g =>g.Game_name == game_name ));
         }
 
     }
