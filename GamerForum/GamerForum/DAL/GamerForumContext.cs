@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
-
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GamerForum.Models
 {
-    public class GamerForumContext: DbContext{
+    public class GamerForumContext: IdentityDbContext<Users>{
 
         public GamerForumContext() : base("GamerForumContext"){
         }
+        static GamerForumContext() {
+            Database.SetInitializer<GamerForumContext>(new IdentityDbInit());
+        }
 
-        public DbSet<Users> User { get; set; }
+        public static GamerForumContext Create() {
+            return new GamerForumContext();
+        }
+
+        public IEnumerable<Users> User { get; internal set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Games> Game { get; set; }
         public DbSet<Genres> Genre { get; set; }
@@ -83,6 +90,8 @@ namespace GamerForum.Models
                     m.ToTable("game_rating");
                 });
 
+
         }
     }
+    public class IdentityDbInit : NullDatabaseInitializer<GamerForumContext> { }
 }

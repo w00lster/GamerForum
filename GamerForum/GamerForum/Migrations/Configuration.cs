@@ -1,17 +1,19 @@
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using GamerForum.Models;
+using System.Collections.Generic;
+using System.Web;
+
 namespace GamerForum.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-    using GamerForum.Models;
-    using System.Collections.Generic;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<GamerForum.Models.GamerForumContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GamerForumContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "GamerForum.DAL.GamerForumContext";
         }
 
         protected override void Seed(GamerForum.Models.GamerForumContext context)
@@ -32,7 +34,10 @@ namespace GamerForum.Migrations
                 new Users{User_name = "Prinsesse", First_name = "Ariel Tornerose", Last_name = "Darling", Age=22, Email = "Prinsesse@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
                 new Users{User_name = "Ellibelly", First_name = "Elliot", Last_name = "Fluff", Age=19, Email = "Elliot@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()}
             };
-            users.ForEach(u => context.User.AddOrUpdate(p => p.UserId, u));
+            foreach (Users user in users){
+                context.Users.AddOrUpdate(p => p.UserId);
+            }
+            //users.ForEach(u => context.User.AddOrUpdate(p => p.UserId, u));
             context.SaveChanges();
 
             var ratings = new List<Ratings>
