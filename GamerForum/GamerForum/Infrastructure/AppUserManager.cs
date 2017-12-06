@@ -10,14 +10,14 @@ using Microsoft.Owin;
 
 namespace GamerForum.Infrastructure
 {
-    public class AppUserManager : UserManager<Users> {
+    public class AppUserManager : UserManager<AppUser> {
 
-        public AppUserManager(IUserStore<Users> store) : base(store) {
+        public AppUserManager(IUserStore<AppUser> store) : base(store) {
         }
 
         public static AppUserManager Create(IdentityFactoryOptions<AppUserManager> options, IOwinContext context) {
             GamerForumContext db = context.Get<GamerForumContext>();
-            AppUserManager manager = new AppUserManager(new UserStore<Users>(db));
+            AppUserManager manager = new AppUserManager(new UserStore<AppUser>(db));
 
             manager.PasswordValidator = new PasswordValidator
             {
@@ -27,7 +27,7 @@ namespace GamerForum.Infrastructure
                 RequireUppercase = false,
             };
 
-            manager.UserValidator = new UserValidator<Users>(manager)
+            manager.UserValidator = new UserValidator<AppUser>(manager)
             {
                 RequireUniqueEmail = true,
                 AllowOnlyAlphanumericUserNames = false

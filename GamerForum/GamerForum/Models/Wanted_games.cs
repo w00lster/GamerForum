@@ -14,6 +14,6 @@ namespace GamerForum.Models
         public int Wanted_Game_Id { get; set; }
         public string Wanted_Game_Name { get; set; }
         public string Wanted_Game_Url { get; set; }
-        public ICollection<Users> Users { get; set; }
+        public ICollection<AppUser> AppUsers { get; set; }
     }
 }

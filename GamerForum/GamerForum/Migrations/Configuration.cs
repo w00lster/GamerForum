@@ -27,33 +27,33 @@ namespace GamerForum.Migrations
             admins.ForEach(a => context.Admins.AddOrUpdate(p => p.Admin_name, a));
             context.SaveChanges();
 
-            var users = new List<Users>
+            var users = new List<AppUser>
             {
-                new Users{User_name = "Lily", First_name = "Lily", Last_name = "A. Lop", Age=18, Email = "Lily@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
-                new Users{User_name = "Caz", First_name = "Castiel", Last_name = "Angel", Age=20, Email = "Cas@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
-                new Users{User_name = "Prinsesse", First_name = "Ariel Tornerose", Last_name = "Darling", Age=22, Email = "Prinsesse@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
-                new Users{User_name = "Ellibelly", First_name = "Elliot", Last_name = "Fluff", Age=19, Email = "Elliot@gmail.com", Day_created = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()}
+                new AppUser{UserName = "Lily", FirstName = "Lily", LastName = "A. Lop", Age=18, Email = "Lily@gmail.com", DayCreated = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
+                new AppUser{UserName = "Caz", FirstName = "Castiel", LastName = "Angel", Age=20, Email = "Cas@gmail.com", DayCreated = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
+                new AppUser{UserName = "Prinsesse", FirstName = "Ariel Tornerose", LastName = "Darling", Age=22, Email = "Prinsesse@gmail.com", DayCreated = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
+                new AppUser{UserName = "Ellibelly", FirstName = "Elliot", LastName = "Fluff", Age=19, Email = "Elliot@gmail.com", DayCreated = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()}
             };
-            foreach (Users user in users){
-                context.Users.AddOrUpdate(p => p.UserId);
+            foreach (AppUser user in users){
+                context.Users.AddOrUpdate(p => p.Id);
             }
             //users.ForEach(u => context.User.AddOrUpdate(p => p.UserId, u));
             context.SaveChanges();
 
             var ratings = new List<Ratings>
             {
-                new Ratings{Rating_value = 1.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 2.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 3.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 4.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 5.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 6.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 7.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 8.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 9.00, Game = new List<Games>(), User = new List<Users>()},
-                new Ratings{Rating_value = 10.00, Game = new List<Games>(), User = new List<Users>()}
+                new Ratings{Rating_value = 1.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 2.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 3.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 4.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 5.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 6.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 7.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 8.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 9.00, Game = new List<Games>(), AppUsers = new List<AppUser>()},
+                new Ratings{Rating_value = 10.00, Game = new List<Games>(), AppUsers = new List<AppUser>()}
             };
-            ratings.ForEach(r => context.Rating.AddOrUpdate(p => p.Rating_value, r));
+            ratings.ForEach(r => context.Ratings.AddOrUpdate(p => p.Rating_value, r));
             context.SaveChanges();
 
             var genres = new List<Genres>
@@ -66,7 +66,7 @@ namespace GamerForum.Migrations
                 new Genres{Genre_name = "Family", Game = new List<Games>()},
                 new Genres{Genre_name = "Kids", Game = new List<Games>()}
             };
-            genres.ForEach(g => context.Genre.AddOrUpdate(p => p.Genre_name, g));
+            genres.ForEach(g => context.Genres.AddOrUpdate(p => p.Genre_name, g));
             context.SaveChanges();
 
             var games = new List<Games>
@@ -77,7 +77,7 @@ namespace GamerForum.Migrations
                 new Games {Game_name= "Fuld af løgn", Game_time ="45-60 min", Description ="løgn og latin", Number_of_Players ="2-6", Year_releashed = 2007, AdminID = 4, Genre = new List<Genres>(), Rating = new List<Ratings>()},
                 new Games {Game_name= "Uno", Game_time ="10-20 min", Description = "+4 kort", Number_of_Players ="2+", Year_releashed = 1900, AdminID = 1, Genre = new List<Genres>(), Rating = new List<Ratings>()}
             };
-            games.ForEach(ga => context.Game.AddOrUpdate(p => p.Game_name, ga));
+            games.ForEach(ga => context.Games.AddOrUpdate(p => p.Game_name, ga));
             context.SaveChanges();
 
             var rights = new List<Rights>
@@ -87,25 +87,25 @@ namespace GamerForum.Migrations
                 new Rights {Rights_name = "Update", Status = new List<Status>()},
                 new Rights {Rights_name = "Delete", Status = new List<Status>()}
             };
-            rights.ForEach(ri => context.Right.AddOrUpdate(p => p.Rights_name, ri));
+            rights.ForEach(ri => context.Rights.AddOrUpdate(p => p.Rights_name, ri));
             context.SaveChanges();
 
             var status = new List<Status>
             {
-                new Status {Status_name = "Moderator", Right = new List<Rights>(), User = new List<Users>()},
-                new Status {Status_name = "Super User", Right = new List<Rights>(), User = new List<Users>()},
-                new Status {Status_name = "User", Right = new List<Rights>(), User = new List<Users>()},
-                new Status {Status_name = "Guest", Right = new List<Rights>(), User = new List<Users>()}
+                new Status {Status_name = "Moderator", Right = new List<Rights>(), AppUsers = new List<AppUser>()},
+                new Status {Status_name = "Super User", Right = new List<Rights>(), AppUsers = new List<AppUser>()},
+                new Status {Status_name = "User", Right = new List<Rights>(), AppUsers = new List<AppUser>()},
+                new Status {Status_name = "Guest", Right = new List<Rights>(), AppUsers = new List<AppUser>()}
             };
             status.ForEach(s => context.Status.AddOrUpdate(p => p.Status_name, s));
             context.SaveChanges();
 
             var wanted_games = new List<Wanted_games>
             {
-                new Wanted_games{Wanted_Game_Name= "Touché", Users = new List<Users>()},
-                new Wanted_games{Wanted_Game_Name= "Tokaido", Users = new List<Users>()},
-                new Wanted_games{Wanted_Game_Name= "Monopoly", Users = new List<Users>()},
-                new Wanted_games{Wanted_Game_Name= "Munchkin", Users = new List<Users>()}
+                new Wanted_games{Wanted_Game_Name= "Touché", AppUsers = new List<AppUser>()},
+                new Wanted_games{Wanted_Game_Name= "Tokaido", AppUsers = new List<AppUser>()},
+                new Wanted_games{Wanted_Game_Name= "Monopoly", AppUsers = new List<AppUser>()},
+                new Wanted_games{Wanted_Game_Name= "Munchkin", AppUsers = new List<AppUser>()}
             };
             wanted_games.ForEach(w => context.Wanted_game.AddOrUpdate(p => p.Wanted_Game_Name, w));
             context.SaveChanges();
@@ -117,11 +117,11 @@ namespace GamerForum.Migrations
 
         void AddOrUpdateGenre(GamerForumContext context, string genre, string game_name)
         {
-            var gen = context.Genre.SingleOrDefault(g => g.Genre_name == genre);
-            var gam = context.Game.SingleOrDefault(ga => ga.Game_name == game_name);
+            var gen = context.Genres.SingleOrDefault(g => g.Genre_name == genre);
+            var gam = context.Games.SingleOrDefault(ga => ga.Game_name == game_name);
 
             if (gam == null)
-                gen.Game.Add(context.Game.SingleOrDefault(g => g.Game_name == game_name));
+                gen.Game.Add(context.Games.SingleOrDefault(g => g.Game_name == game_name));
         }
     }
 }

@@ -14,7 +14,7 @@ namespace GamerForum.Models
         public int RatingId { get; set; }
         public double Rating_value { get; set; }
 
-        public ICollection<Users> User { get; set; }
+        public ICollection<AppUser> AppUsers { get; set; }
         public ICollection<Games> Game { get; set; }
     }
 }

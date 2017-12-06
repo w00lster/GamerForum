@@ -7,13 +7,13 @@ namespace GamerForum.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class nullableAge : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(nullableAge));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712041744282_InitialCreate"; }
+            get { return "201712061047027_nullableAge"; }
         }
         
         string IMigrationMetadata.Source

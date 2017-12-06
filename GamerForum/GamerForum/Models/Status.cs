@@ -15,6 +15,6 @@ namespace GamerForum.Models
         public string Status_name { get; set; }
 
         public ICollection<Rights> Right { get; set; }
-        public ICollection<Users> User { get; set; }
+        public ICollection<AppUser> AppUsers { get; set; }
     }
 }
