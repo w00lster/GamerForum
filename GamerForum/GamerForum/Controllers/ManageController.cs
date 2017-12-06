@@ -285,7 +285,7 @@ namespace GamerForum.Controllers
                 message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : "";
-            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            var user = await UserManager.FindByEmailAsync(User.Identity.GetUserId());
             if (user == null)
             {
                 return View("Error");
