@@ -2,30 +2,61 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+@*<div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+</div>*@
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div id="front_page_wrapper">
+    <div class="front_page_secondary_wrapper">
+        <div class="container">
+            <!--Circles Start-->
+            <div class="row front_page_circles">
+                <div class="col-md-4">
+                    <div class="circle_info">
+                        <h2>54</h2>
+                        <p>BOARD GAMES</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="circle_info">
+                        <h2>221</h2>
+                        <p>REVIEWS</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="circle_info">
+                        <h2>17</h2>
+                        <p>NEW REVIEWS THIS WEEK</p>
+                    </div>
+                </div>
+            </div>
+            <!--Circles End-->
+
+            <!--Login Start-->
+            <div>
+                <form>
+                    <div class="row form_font">
+                        <div class="form-group col-lg-4 col-lg-offset-1 ">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Please enter your e-mail">
+                        </div>
+                        <div class="form-group col-lg-4 ">
+                            <label for="psw">Password</label>
+                            <input type="password" class="form-control" id="psw" placeholder="Please enter your password">
+                        </div>
+                        <label></label>
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="login_text_frontpage">
+                <p><span>Not a part of our community yet?</span> <br />
+                Register now, it's easy and free, and we don't spam you with e-mails! <a href="~/Account/Register">Click here to register</a></p>
+            </div>
+            <!--Login End-->
+        </div>
     </div>
 </div>
