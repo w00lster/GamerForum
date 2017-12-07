@@ -1,5 +1,25 @@
-﻿body {
+﻿@font-face {
+    font-family: 'aniron';
+    src: url('../fonts/aniron.regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+body {
     padding: 0;
+    font-family: "OpenSans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Ubuntu;
 }
 
 .front_page_secondary_wrapper {
@@ -11,11 +31,55 @@
     background: -moz-linear-gradient(right, rgba(0,0,0,.5), rgba(0,0,0,.5));
 }
 
+/* GENERAL STYLING START */
+.general-wrapper {
+    padding-top: 6em;
+}
+
+/* GENERAL STYLING END */
 /*NAVIGATION STYLING START*/
-.navbar-inverse{
-    background-color:#222;
+.navbar-inverse {
+    background-color: #222;
+    border: none;
+    height: 6em;
+}
+
+#nav-logo {
+    margin: 0;
     border: none;
 }
+
+#nav-logo a {
+    padding: 0;
+    text-align: left;
+}
+
+#nav-logo img {
+    height: 4.6em;
+}
+
+.navbar-header, .navbar-nav {
+    float: none;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    font-size: .8em;
+    text-align: center;
+    font-family: "aniron";
+}
+
+.navbar-nav li {
+    width: 14%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    margin-top: 1em;
+    margin-right: 2%;
+}
+
 /*NAVIGATION STYLING END*/
 /*FORMS STYLING START*/
 .form_font {
@@ -41,10 +105,59 @@
 
 .front_page_circles {
     padding-top: 7em;
+    position: relative;
+    z-index: 1;
+    perspective: 1000;
+}
+
+.front_page_circles .circle-wrapper {
+    /*width: 100%;
+    height: 100%;*/
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+.front_page_circles .circle-wrapper:hover {
+    transform: rotateY(180deg);
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    padding-top: 2em;
+    text-align: center;
+    background: linear-gradient(right, rgba(240,248,255,.3), rgba(240,248,255,.3));
+    background: -webkit-linear-gradient(right, rgba(240,248,255,.3), rgba(240,248,255,.3));
+    background: -o-linear-gradient(right, rgba(240,248,255,.3),rgba(240,248,255,.3));
+    background: -moz-linear-gradient(right, rgba(240,248,255,.3), rgba(240,248,255,.3));
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+}
+
+.face.back img {
+    max-height: 13em;
+    max-width: 13em;
+}
+
+.circle-wrapper {
+    width: 20em;
+    height: 20em;
 }
 
 .circle_info {
-    background-color: aliceblue;
+    background: linear-gradient(right, rgba(240,248,255,.3), rgba(240,248,255,.3));
+    background: -webkit-linear-gradient(right, rgba(240,248,255,.3), rgba(240,248,255,.3));
+    background: -o-linear-gradient(right, rgba(240,248,255,.3),rgba(240,248,255,.3));
+    background: -moz-linear-gradient(right, rgba(240,248,255,.3), rgba(240,248,255,.3));
     width: 20em;
     height: 20em;
     border-radius: 50%;
@@ -53,23 +166,95 @@
     box-sizing: border-box;
 }
 
-.circle_info > h2{
+.circle_info > h2 {
     font-size:4em;
 }
 
+.circle_info h2, .circle_info p, .back.face h2, .back.face p {
+    color: #dedede;
+    font-family: Ubuntu;
+}
+
+/* CIRCLE END */
+
+/* LOG IN START*/
 .login_text_frontpage{
     color:aliceblue;
     text-align:center;
     padding-top:2em;
+    font-size: 1.2em;
 }
 
-.login_text_frontpage span{
-    font-weight:bold;
+.login_text_frontpage span {
+    font-weight: bold;
+    font-size: 1.4em;
 }
 
 .login_text_frontpage a{
     color:aqua;
     text-decoration:underline;
 }
+/* LOG IN END */
+
+/* RAND MESSAGES START*/
+.random-messages{
+    color:aliceblue;
+    text-align:center;
+    margin-top: 3em;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+/* RAND MESSAGE END */
+/*PANELBAR START*/
+.panel-bar{
+    background-color:powderblue;
+    height: 4em;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    padding: 1.3em .7em;
+}
+
+.panel-bar ul{
+    list-style: none;
+}
+
+.panel-bar ul li {
+    display: inline-block;
+    font-size: .7em;
+    margin: 0 1.3em;
+    font-family: aniron;
+    float: left;
+}
+
+    .panel-bar ul li.right-panel-elements {
+        float: right;
+    }
+
+
+.panel-bar i {
+    margin-right: .7em;
+    font-size: 1.5em;
+}
+
+.panel-bar ul li:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/*PANELBAR END*/
 
 /*FRONTPAGE STYLING END*/
+
+/* 1160px */
+@media(max-width: 1160px) {
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: .7em;
+    }
+
+    .navbar-nav li {
+        width: 14%;
+        margin-right: 2%;
+    }
+}

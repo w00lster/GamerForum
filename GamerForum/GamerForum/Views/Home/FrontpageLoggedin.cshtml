@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>*@
+@*This is just a comment*@
+<div id="front_page_wrapper" class="general-wrapper">
+    <div class="front_page_secondary_wrapper">
+        <div class="container">
+            <!--Circles Start-->
+            <div class="row front_page_circles">
+                <!-- f1_container -->
+                <div class="col-md-4">
+                    <!-- #f1_card.shadow -->
+                    <div class="circle-wrapper">
+                        <div class="circle_info face">
+                            <!-- front face-->
+                            <h2>54</h2>
+                            <p>BOARD GAMES</p>
+                        </div>
+
+                        <div class="back face center">
+                            <p>NEWEST GAME</p>
+                            <a href="~/Games/SpecificGame"><img src="~/Content/Image/descent.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="circle-wrapper">
+                        <div class="circle_info face">
+                            <h2>221</h2>
+                            <p>REVIEWS</p>
+                        </div>
+
+                        <div class="back face center">
+                            <p>BEST RATED</p>
+                            <a href="~/Games/SpecificGame"><img src="~/Content/Image/relic.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="circle-wrapper">
+                        <div class="circle_info face">
+                            <h2>17</h2>
+                            <p>NEW REVIEWS THIS WEEK</p>
+                        </div>
+
+                        <div class="back face center">
+                            <p>NEWLY RATED</p>
+                            <a href="~/Games/SpecificGame"><img src="~/Content/Image/tickettoride.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Circles End-->
+            <!--Random Messages Start-->
+            <div class="random-messages">
+                <p>Couldn't find the game you were looking for? Send us a request for a game you would like to see and we'll take a look</p>
+                <p><a href="#">Click here</a> to zoom on over to our request page!</p>
+            </div>
+            <!--Random Messages End-->
+        </div>
+
+        <!-- Logged in panel Start-->
+        <div class="panel-bar">
+            <ul>
+                <li><i class="fa fa-bell"></i>YOUR NOTIFICATIONS</li>
+                <li><a href="~/Account/UserProfile"><i class="fa fa-user-o"></i>YOUR PROFILE</a></li>
+                <li><a href="~/Account/AdminProfile"><i class="fa fa-id-card"></i>ADMIN PANEL</a></li>
+                <li class="right-panel-elements"><i class="fa fa-sign-out"></i>LOG OUT - SEE YOU SOON!</li>
+                <li class="right-panel-elements"><a href="~/Games/RequestGameForm"><i class="fa fa-plus-square-o"></i>REQUEST GAME</a></li>
+            </ul>
+        </div>
+        <!-- Logged in panel End-->
+    </div>
+</div>

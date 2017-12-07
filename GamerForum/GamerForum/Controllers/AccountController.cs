@@ -23,10 +23,14 @@ namespace GamerForum.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public ActionResult UserProfile()
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
+            return View();
+        }
+
+        public ActionResult AdminProfile()
+        {
+            return View();
         }
 
         public ApplicationSignInManager SignInManager
