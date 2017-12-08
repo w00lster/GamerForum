@@ -1,8 +1,37 @@
-﻿
+﻿@model IEnumerable<GamerForum.Models.Games>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Games";
 }
 
-<h2>Index</h2>
+<h2>Courses</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>Id</th>
+        <th>Tite</th>
+        <th>Game Time</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameId)
+            </td>
+            <td>
+                <a href="~/Games/SpecificGame?id=@item.GameId">
+                    @Html.DisplayFor(modelItem => item.Game_name)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game_time)
+            </td>
+        </tr>
+    }
+</table>

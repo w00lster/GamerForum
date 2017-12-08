@@ -215,9 +215,12 @@
     <Compile Include="Migrations\201712061104250_UpdateAppUser.Designer.cs">
       <DependentUpon>201712061104250_UpdateAppUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712081042247_add-migration DatabaseView.cs" />
+    <Compile Include="Migrations\201712081042247_add-migration DatabaseView.Designer.cs">
+      <DependentUpon>201712081042247_add-migration DatabaseView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Games.cs" />
     <Compile Include="Models\Genres.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -226,7 +229,6 @@
     <Compile Include="Models\Ratings.cs" />
     <Compile Include="Models\Rights.cs" />
     <Compile Include="Models\Status.cs" />
-    <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Wanted_games.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -329,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712061104250_UpdateAppUser.resx">
       <DependentUpon>201712061104250_UpdateAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081042247_add-migration DatabaseView.resx">
+      <DependentUpon>201712081042247_add-migration DatabaseView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

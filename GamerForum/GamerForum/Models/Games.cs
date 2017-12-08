@@ -12,7 +12,6 @@ namespace GamerForum.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int GameId { get; set; }
-        public int AdminID { get; set; }
         public string Game_name { get; set; }
         public string Game_url { get; set; }
         public string Description { get; set; }
@@ -21,5 +20,6 @@ namespace GamerForum.Models
         public int Year_releashed { get; set; }
         public ICollection<Genres> Genre { get; set; }
         public ICollection<Ratings> Rating { get; set; }
+        public ICollection<Images> Images { get; set; }
     }
 }

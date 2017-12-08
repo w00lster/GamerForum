@@ -21,13 +21,13 @@ namespace GamerForum.Models
         }
 
         public IEnumerable AppUsers { get; internal set; }
-        public DbSet<Admin> Admins { get; set; }
         public DbSet<Games> Games { get; set; }
         public DbSet<Genres> Genres { get; set; }
         public DbSet<Rights> Rights { get; set; }
         public DbSet<Ratings> Ratings { get; set; }
         public DbSet<Status> Status { get; set; }
         public DbSet<Wanted_games> Wanted_game { get; set; }
+        public DbSet<Images> Images { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

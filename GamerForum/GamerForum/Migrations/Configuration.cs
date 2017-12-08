@@ -18,15 +18,6 @@ namespace GamerForum.Migrations
 
         protected override void Seed(GamerForum.Models.GamerForumContext context)
         {
-            var admins = new List<Admin> {
-                new Admin{Admin_name = "Morten", Email = "Uldum42@gmail.com", Password = "1234567a"},
-                new Admin{Admin_name ="Skjold", Email = "eaasrl2017@gmail.com", Password = "1234567b"},
-                new Admin{Admin_name ="Mette", Email = "#", Password = "1234567c"},
-                new Admin{Admin_name ="kristine", Email = "#", Password ="1234567d"}
-            };
-            admins.ForEach(a => context.Admins.AddOrUpdate(p => p.Admin_name, a));
-            context.SaveChanges();
-
             var users = new List<AppUser>
             {
                 new AppUser{UserName = "Lily", FirstName = "Lily", LastName = "A. Lop", Age=18, Email = "Lily@gmail.com", DayCreated = DateTime.Now, Ratings = new List<Ratings>(), Status = new List<Status>(), Wanted_games = new List<Wanted_games>()},
@@ -71,11 +62,11 @@ namespace GamerForum.Migrations
 
             var games = new List<Games>
             {
-                new Games {Game_name= "Marvel Legendary", Game_time ="45-90 min", Description ="Lorem Ipsum", Number_of_Players ="1-5", Year_releashed = 2000, AdminID = 1, Genre = new List<Genres>(), Rating = new List<Ratings>()},
-                new Games {Game_name= "Talisman", Game_time ="60-90 min", Description ="Dolor sit amet", Number_of_Players ="2-5", Year_releashed = 2017, AdminID = 2, Genre = new List<Genres>(), Rating = new List<Ratings>()},
-                new Games {Game_name= "Det dårlige Selskab", Game_time ="30-60 min", Description ="Hab hab", Number_of_Players ="3-6", Year_releashed = 2003, AdminID = 3, Genre = new List<Genres>(), Rating = new List<Ratings>()},
-                new Games {Game_name= "Fuld af løgn", Game_time ="45-60 min", Description ="løgn og latin", Number_of_Players ="2-6", Year_releashed = 2007, AdminID = 4, Genre = new List<Genres>(), Rating = new List<Ratings>()},
-                new Games {Game_name= "Uno", Game_time ="10-20 min", Description = "+4 kort", Number_of_Players ="2+", Year_releashed = 1900, AdminID = 1, Genre = new List<Genres>(), Rating = new List<Ratings>()}
+                new Games {Game_name= "Marvel Legendary", Game_time ="45-90 min", Description ="Lorem Ipsum", Number_of_Players ="1-5", Year_releashed = 2000, Genre = new List<Genres>(), Rating = new List<Ratings>()},
+                new Games {Game_name= "Talisman", Game_time ="60-90 min", Description ="Dolor sit amet", Number_of_Players ="2-5", Year_releashed = 2017, Genre = new List<Genres>(), Rating = new List<Ratings>()},
+                new Games {Game_name= "Det dårlige Selskab", Game_time ="30-60 min", Description ="Hab hab", Number_of_Players ="3-6", Year_releashed = 2003, Genre = new List<Genres>(), Rating = new List<Ratings>()},
+                new Games {Game_name= "Fuld af løgn", Game_time ="45-60 min", Description ="løgn og latin", Number_of_Players ="2-6", Year_releashed = 2007, Genre = new List<Genres>(), Rating = new List<Ratings>()},
+                new Games {Game_name= "Uno", Game_time ="10-20 min", Description = "+4 kort", Number_of_Players ="2+", Year_releashed = 1900, Genre = new List<Genres>(), Rating = new List<Ratings>()}
             };
             games.ForEach(ga => context.Games.AddOrUpdate(p => p.Game_name, ga));
             context.SaveChanges();
@@ -110,8 +101,13 @@ namespace GamerForum.Migrations
             wanted_games.ForEach(w => context.Wanted_game.AddOrUpdate(p => p.Wanted_Game_Name, w));
             context.SaveChanges();
 
-            AddOrUpdateGenre(context, "Deck building", "Marvel Legendary");
+            var images = new List<Images>{
+                new Images{Image_path = "/Content/Image/descent.png", GameId = 1}
+
+            };
+            images.ForEach(i => context.Images.AddOrUpdate(p => p.ImageId, i));
             context.SaveChanges();
+
 
         }
 

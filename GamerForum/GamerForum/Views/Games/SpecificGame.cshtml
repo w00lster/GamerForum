@@ -1,4 +1,4 @@
-﻿
+﻿@model GamerForum.Models.Games
 @{
     ViewBag.Title = "SpecificGame";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,5 +8,14 @@
 
     <h2>@ViewBag.Title.</h2>
     <p>THIS PAGE HAS DYNAMIC CONTENT BASED ON WHATEVER GAME YOU HAVE SELECTED. ALL DETALIS ABOUT THE GAME, REVIEWS ETC. WILL BE HERE :D</p>
+
+    Game Name:    @Html.DisplayFor(Model => Model.Game_name) <br />
+    Game time:               @Html.DisplayFor(Model => Model.Game_time) <br />
+    Number of players:    @Html.DisplayFor(Model => Model.Number_of_Players) <br />
+    Images: @foreach (var image in Model.Images)
+    {
+        <img src="@image.Image_path" alt="No Images" />
+    }
+
 </div>
 
