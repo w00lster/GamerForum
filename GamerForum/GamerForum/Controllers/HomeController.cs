@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GamerForum.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace GamerForum.Controllers
 {
     public class HomeController : Controller
     {
+        private GamerForumContext db = new GamerForumContext();
+
         public ActionResult Index()
         {
- 
-            return View();
+            var games = db.Games.ToList();
+            return View(games);
         }
 
         public ActionResult FrontpageLoggedin()
