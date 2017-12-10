@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<GamerForum.Models.Games>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -19,13 +20,14 @@
                     <div class="circle-wrapper">
                         <div class="circle_info face">
                             <!-- front face-->
-                            <h2>54</h2>
+                            <h2>@Model.Count()</h2>
                             <p>BOARD GAMES</p>
                         </div>
 
                         <div class="back face center">
                             <p>NEWEST GAME</p>
-                            <a href="~/Games/SpecificGame"><img src="~/Content/Image/descent.png" /></a>
+                            <!--I øjeblikket viser den statiske udgave, så det skal vi have kigget på!!-->
+                            <a href="~/Games/SpecificGame?id=1"><img src="~/Content/Image/descent.png" /></a>
                         </div>
                     </div>
                 </div>

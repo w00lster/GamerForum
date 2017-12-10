@@ -11,29 +11,45 @@ namespace GamerForum.Controllers
     {
         private GamerForumContext db = new GamerForumContext();
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var games = db.Games.ToList();
-            return View(games);
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(games);
+            }
+            else
+                return View("~/Views/Home/FrontpageLoggedin.cshtml");
         }
-
         public ActionResult FrontpageLoggedin()
         {
-            return View();
+            var games = db.Games.ToList();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(games);
+            }
+            else
+                return View(games);
+                    
         }
 
+        [AllowAnonymous]
         public ActionResult BoardGames()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Recommendations()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Users()
         {
+
             return View();
         }
 
