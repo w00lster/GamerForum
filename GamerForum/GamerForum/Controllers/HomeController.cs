@@ -1,7 +1,9 @@
 ﻿using GamerForum.Models;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,29 +11,28 @@ namespace GamerForum.Controllers
 {
     public class HomeController : Controller
     {
-        private GamerForumContext db = new GamerForumContext();
+        private static GamerForumContext db = new GamerForumContext();
+
+        public static List<Games> games = db.Games.ToList();
 
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var games = db.Games.ToList();
-            if (User.Identity.IsAuthenticated)
-            {
+            if (!User.Identity.IsAuthenticated) {
                 return View(games);
             }
             else
-                return View("~/Views/Home/FrontpageLoggedin.cshtml");
+                return RedirectToAction("FrontpageLoggedin");
         }
+
         public ActionResult FrontpageLoggedin()
         {
-            var games = db.Games.ToList();
-            if (User.Identity.IsAuthenticated)
+            if (!User.Identity.IsAuthenticated)
             {
-                return View(games);
+                return RedirectToAction("Index");
             }
             else
                 return View(games);
-                    
         }
 
         [AllowAnonymous]
@@ -53,6 +54,7 @@ namespace GamerForum.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             return View();
