@@ -298,6 +298,20 @@
 
 
 /* GAMES STYLING START */
+
+/* game genre */
+.genre {
+    grid-column: 3 / 11;
+    grid-row: 2 / 3;
+}
+
+.content-slider {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1em;
+}
+
+/* game lists */
 .content h2 {
     grid-column: 3 / 10;
 }
@@ -319,52 +333,54 @@
     width: 100%;
 }
 
-    .game-short:nth-child(odd) {
-        grid-column: 2 / 3;
-    }
+.game-short:nth-child(odd) {
+    grid-column: 2 / 3;
+}
 
-    .game-short:nth-child(even) {
-        grid-column: 3 / 4;
-    }
+.game-short:nth-child(even) {
+    grid-column: 3 / 4;
+}
 
-    .game-short figure {
-        position: relative;
-    }
+.game-short figure {
+    position: relative;
+    height: 25em;
+    padding-top: 5em;
+}
 
-        .game-short figure img {
-            position: relative;
-            display: block;
-            max-width: 100%;
-            margin: auto;
-        }
+.game-short figure img {
+    position: relative;
+    display: block;
+    height: 15em;
+    margin: auto;
+}
 
-    .game-short figcaption {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 20px;
-        background: #2c3f52;
-        color: #ed4e6e;
-    }
+.game-short figcaption {
+position: absolute;
+top: 0;
+left: 0;
+padding: 20px;
+background: #2c3f52;
+color: #ed4e6e;
+}
 
-        .game-short figcaption h3 {
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
+.game-short figcaption h3 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
 
-        .game-short figcaption span:before {
-            content: 'by ';
-        }
+.game-short figcaption span:before {
+    content: 'by ';
+}
 
-        .game-short figcaption a {
-            text-align: center;
-            padding: 5px 10px;
-            border-radius: 2px;
-            display: inline-block;
-            background: #ed4e6e;
-            color: #fff;
-        }
+.game-short figcaption a {
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 2px;
+    display: inline-block;
+    background: #ed4e6e;
+    color: #fff;
+}
 
 .game-list .game-short {
     -webkit-perspective: 1700px;
@@ -381,23 +397,23 @@
     transform-style: preserve-3d;
 }
 
-    .game-list figure > div {
-        overflow: hidden;
-    }
+.game-list figure > div {
+    overflow: hidden;
+}
 
-    .game-list figure img {
-        -webkit-transition: -webkit-transform 0.4s;
-        -moz-transition: -moz-transform 0.4s;
-        transition: transform 0.4s;
-    }
+.game-list figure img {
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+}
 
-    .no-touch .game-list figure:hover img,
-    .game-list figure.cs-hover img {
-        -webkit-transform: translateX(25%);
-        -moz-transform: translateX(25%);
-        -ms-transform: translateX(25%);
-        transform: translateX(25%);
-    }
+.no-touch .game-list figure:hover img,
+.game-list figure.cs-hover img {
+    -webkit-transform: translateX(25%);
+    -moz-transform: translateX(25%);
+    -ms-transform: translateX(25%);
+    transform: translateX(25%);
+}
 
 .game-list figcaption {
     height: 100%;
