@@ -20,8 +20,14 @@ namespace GamerForum.Controllers
         public ActionResult SpecificGame(int id = 0)
         {
             var gameFound = db.Games.FirstOrDefault(g => g.GameId == id);
-            gameFound.Images = db.Images.Where(i => i.GameId == gameFound.GameId).ToArray();
-            return View(gameFound);
+            if (gameFound != null) {
+                gameFound.Images = db.Images.Where(i => i.GameId == gameFound.GameId).ToArray();
+
+                return View(gameFound);
+            }
+            else 
+            return RedirectToAction("index");
+            
         }
 
         public ActionResult RequestGameForm()
