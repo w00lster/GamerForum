@@ -4,35 +4,66 @@
     ViewBag.Title = "Games";
 }
 
-<h2>Courses</h2>
+<script src="~/Content/Js/GamesList.js"></script>
+<script src="~/Content/Js/modernizr.js"></script>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th></th>
-        <th>Id</th>
-        <th>Tite</th>
-        <th>Game Time</th>
+<div class="content">
+    <h2>Games</h2>
 
-    </tr>
+    <div class="genre">
+        <div class="genre-carousel">
 
-    @foreach (var item in Model)
-    {
+        </div>
+        <div class="chosen-genres">
+
+        </div>
+    </div>
+
+    <div class="game-list">
+        @foreach (var item in Model)
+        {
+            <div class="game-short">
+                <figure>
+                    <div><!--<a href="~/Games/SpecificGame?id=@item.GameId">--><img src="~/Content/Image/descent.png" /><!--</a>--></div>
+                    <figcaption>
+                        <h3>@Html.DisplayFor(modelItem => item.Game_name)</h3>
+                        <span>Stars</span>
+                        <a href="~/Games/SpecificGame?id=@item.GameId">Take a look</a>
+                    </figcaption>
+                </figure>
+            </div>
+        }
+    </div>
+
+    <p class="create-new">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <!--<table>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GameId)
-            </td>
-            <td>
-                <a href="~/Games/SpecificGame?id=@item.GameId">
-                    @Html.DisplayFor(modelItem => item.Game_name)
-                </a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Game_time)
-            </td>
+            <th></th>
+            <th>Id</th>
+            <th>Tite</th>
+            <th>Game Time</th>
+
         </tr>
-    }
-    
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameId)
+                </td>
+                <td>
+                    <a href="~/Games/SpecificGame?id=@item.GameId">
+                        @Html.DisplayFor(modelItem => item.Game_name)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Game_time)
+                </td>
+            </tr>
+        }
+
+
+    </table>-->
+</div>
