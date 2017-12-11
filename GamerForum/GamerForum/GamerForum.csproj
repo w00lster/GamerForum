@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201712081042247_add-migration DatabaseView.Designer.cs">
       <DependentUpon>201712081042247_add-migration DatabaseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712111242471_addedMoreGames.cs" />
+    <Compile Include="Migrations\201712111242471_addedMoreGames.Designer.cs">
+      <DependentUpon>201712111242471_addedMoreGames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Games.cs" />
@@ -240,6 +244,80 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Image\1st &amp; Goal\1st&amp;goal1.jpg" />
+    <Content Include="Content\Image\1st &amp; Goal\1st&amp;goal2.jpg" />
+    <Content Include="Content\Image\1st &amp; Goal\1st&amp;goal3.jpg" />
+    <Content Include="Content\Image\1st &amp; Goal\frontpic.jpg" />
+    <Content Include="Content\Image\7 Wonders Duel\7wondersduel1.jpg" />
+    <Content Include="Content\Image\7 Wonders Duel\7wondersduel2.jpg" />
+    <Content Include="Content\Image\7 Wonders Duel\7wondersduel3.jpg" />
+    <Content Include="Content\Image\7 Wonders Duel\frontpic.jpg" />
+    <Content Include="Content\Image\Abalone\abalone1.jpg" />
+    <Content Include="Content\Image\Abalone\abalone2.jpg" />
+    <Content Include="Content\Image\Abalone\frontpic.jpg" />
+    <Content Include="Content\Image\Agon\agon1.jpg" />
+    <Content Include="Content\Image\Agon\agon2.jpg" />
+    <Content Include="Content\Image\Agon\frontpic.jpg" />
+    <Content Include="Content\Image\Ambush\ambush1.jpg" />
+    <Content Include="Content\Image\Ambush\ambush2.jpg" />
+    <Content Include="Content\Image\Ambush\frontpic.jpg" />
+    <Content Include="Content\Image\and then, we held hands\frontpic.jpg" />
+    <Content Include="Content\Image\and then, we held hands\heldhand1.jpg" />
+    <Content Include="Content\Image\and then, we held hands\heldhand2.jpg" />
+    <Content Include="Content\Image\and then, we held hands\heldhand3.jpg" />
+    <Content Include="Content\Image\Asalto\asalto1.jpg" />
+    <Content Include="Content\Image\Asalto\frontpic.jpg" />
+    <Content Include="Content\Image\B17QueenOfTheSkies\b17queenoftheskies1.jpg" />
+    <Content Include="Content\Image\B17QueenOfTheSkies\b17queenoftheskies2.jpg" />
+    <Content Include="Content\Image\B17QueenOfTheSkies\b17queenoftheskies3.jpg" />
+    <Content Include="Content\Image\B17QueenOfTheSkies\frontpic.jpg" />
+    <Content Include="Content\Image\Backgammon\backgammon1.jpg" />
+    <Content Include="Content\Image\Backgammon\frontpic.jpg" />
+    <Content Include="Content\Image\Battleship\battleship1.jpg" />
+    <Content Include="Content\Image\Battleship\battleship2.jpg" />
+    <Content Include="Content\Image\Battleship\frontpic.jpg" />
+    <Content Include="Content\Image\Blockade\frontpic.jpg" />
+    <Content Include="Content\Image\Bloodbowl 1st edition\bloodbowl1.jpg" />
+    <Content Include="Content\Image\Bloodbowl 1st edition\frontpic.jpg" />
+    <Content Include="Content\Image\Bloodbowl 2nd edition\bloodbowl2nd1.jpg" />
+    <Content Include="Content\Image\Bloodbowl 2nd edition\bloodbowl2nd2.jpg" />
+    <Content Include="Content\Image\Bloodbowl 2nd edition\frontpic.jpg" />
+    <Content Include="Content\Image\Camelot\camelot1.jpg" />
+    <Content Include="Content\Image\Camelot\camelot2.jpg" />
+    <Content Include="Content\Image\Camelot\frontpic.jpg" />
+    <Content Include="Content\Image\Caverna cave vs cave\caverna1.jpg" />
+    <Content Include="Content\Image\Caverna cave vs cave\caverna2.jpg" />
+    <Content Include="Content\Image\Caverna cave vs cave\caverna3.jpg" />
+    <Content Include="Content\Image\Caverna cave vs cave\frontpic.jpg" />
+    <Content Include="Content\Image\Chaturanga\chaturanga1.jpg" />
+    <Content Include="Content\Image\Chaturanga\chaturanga2.jpg" />
+    <Content Include="Content\Image\Chaturanga\frontpic.jpg" />
+    <Content Include="Content\Image\Checkers\checkers1.jpg" />
+    <Content Include="Content\Image\Checkers\checkers2.jpg" />
+    <Content Include="Content\Image\Checkers\frontpic.jpg" />
+    <Content Include="Content\Image\Chess\chess1.jpg" />
+    <Content Include="Content\Image\Chess\chess2.jpg" />
+    <Content Include="Content\Image\Chess\frontpic.jpg" />
+    <Content Include="Content\Image\Connect4\connect1.jpg" />
+    <Content Include="Content\Image\Connect4\connect2.jpg" />
+    <Content Include="Content\Image\Connect4\frontpic.jpg" />
+    <Content Include="Content\Image\Daldos\daldos1.jpg" />
+    <Content Include="Content\Image\Daldos\daldos2.jpg" />
+    <Content Include="Content\Image\Daldos\frontpic.jpg" />
+    <Content Include="Content\Image\Dark Is The Night\darksithenight1.jpg" />
+    <Content Include="Content\Image\Dark Is The Night\frontpic.png" />
+    <Content Include="Content\Image\Diamond\frontpic.jpg" />
+    <Content Include="Content\Image\Down Fall\downfall1.jpg" />
+    <Content Include="Content\Image\Down Fall\frontpic.jpg" />
+    <Content Include="Content\Image\Friday\friday1.jpg" />
+    <Content Include="Content\Image\Friday\friday2.jpg" />
+    <Content Include="Content\Image\Friday\friday3.jpg" />
+    <Content Include="Content\Image\Friday\frontpic.jpg" />
+    <Content Include="Content\Image\Ghosts\frontpic.jpg" />
+    <Content Include="Content\Image\Ghosts\ghosts1.jpg" />
+    <Content Include="Content\Image\Ghosts\ghosts2.jpg" />
+    <Content Include="Content\Image\Go\frontpic.jpg" />
+    <Content Include="Content\Image\Go\go1.jpg" />
     <Content Include="Content\Js\GameList.js" />
     <Content Include="Content\Js\LightSlider.js" />
     <Content Include="Content\Js\modernizr.js" />
@@ -342,10 +420,11 @@
     <EmbeddedResource Include="Migrations\201712081042247_add-migration DatabaseView.resx">
       <DependentUpon>201712081042247_add-migration DatabaseView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712111242471_addedMoreGames.resx">
+      <DependentUpon>201712111242471_addedMoreGames.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

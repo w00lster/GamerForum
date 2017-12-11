@@ -12,6 +12,7 @@
     Game Name:    @Html.DisplayFor(Model => Model.Game_name) <br />
     Game time:               @Html.DisplayFor(Model => Model.Game_time) <br />
     Number of players:    @Html.DisplayFor(Model => Model.Number_of_Players) <br />
+    Description: @Html.DisplayFor(Model => Model.Description) <br />
     Images: @foreach (var image in Model.Images)
     {
         <img src="@image.Image_path" alt="No Images" />
