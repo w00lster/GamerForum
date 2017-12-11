@@ -1,0 +1,73 @@
+﻿@model GamerForum.Models.Games
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Games</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number_of_Players)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number_of_Players)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year_releashed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year_releashed)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

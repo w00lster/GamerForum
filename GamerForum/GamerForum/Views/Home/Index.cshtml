@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Home Page";
+    int numberOfgames = Model.Count();
 }
 
 @*<div class="jumbotron">
@@ -19,13 +20,13 @@
                 <div class="circle-wrapper">
                     <div class="circle_info face">
                         <!-- front face-->
-                        <h2>@Model.Count()</h2>
+                        <h2>@numberOfgames</h2>
                         <p>BOARD GAMES</p>
                     </div>
 
                     <div class="back face center">
                         <p>NEWEST GAME</p>
-                        <a href="~/Games/SpecificGame?id=@Model.Count()"><img src="~/Content/Image/descent.png" /></a>
+                        <a href="~/Games/details?id=@Model.Count()"><img src="~/Content/Image/descent.png" /></a>
                     </div>
                 </div>
                 <div class="circle-wrapper">
@@ -54,21 +55,23 @@
             <!--Circles End-->
             <!--Login Start-->
             <div class="login-form">
-                <form>
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
                     <div class="form-group email">
                         <label for="email">E-mail address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Please enter your e-mail">
+                        <input type="email" class="form-control" id="email" name="Email" placeholder="Please enter your e-mail">
                     </div>
                     <div class="form-group password">
-                        <label for="psw">Password</label>
-                        <input type="password" class="form-control" id="psw" placeholder="Please enter your password">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" id="Password" name="Password" placeholder="Please enter your password">
                     </div>
                     <div class="form-group submit">
                         <button type="submit" onclick="" class="btn btn-primary">Log in</button>
                     </div>
-                </form>
+                }
             </div>
-
+                
             <div class="login-text-frontpage">
                 <p>Not a part of our community yet?</p>
                 <p>Register now, it's easy and free, <br />and we don't spam you with e-mails! <a href="~/Account/Register">Click here to register</a></p>

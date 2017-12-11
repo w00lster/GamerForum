@@ -1,129 +1,64 @@
 ﻿@model IEnumerable<GamerForum.Models.Games>
 
 @{
-    ViewBag.Title = "Games";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<script src="~/Content/Js/GamesList.js"></script>
-<script src="~/Content/Js/modernizr.js"></script>
+<h2>Index</h2>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="~/Content/Js/LightSlider.js"></script>
-<link href="~/Content/Styles/LightSlider.css" rel="stylesheet" />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GameId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_Players)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year_releashed)
+        </th>
+        <th></th>
+    </tr>
 
-<script>
-    $(document).ready(function () {
-        $("#content-slider").lightSlider({
-            loop: true,
-            keyPress: true
-        });
-    });
-</script>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameId)
+        </td>
+        <td>
+           <a href="~/Games/Details/@item.GameId">@item.Game_name</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Game_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_Players)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year_releashed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GameId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GameId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GameId })
+        </td>
+    </tr>
+}
 
-<style>
-    ul {
-        list-style: none outside none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .demo .item {
-        margin-bottom: 60px;
-    }
-
-    .content-slider li {
-        background-color: #ed3020;
-        text-align: center;
-        color: #FFF;
-    }
-
-    .content-slider h3 {
-        margin: 0;
-        padding: 70px 0;
-    }
-
-    .demo {
-        width: 800px;
-    }
-</style>
-
-
-<div class="content">
-    <h2>Games</h2>
-
-    <div class="genre ">
-        <div class="genre-carousel">
-            <ul id="content-slider" class="content-slider">
-                <li>
-                    <h3>1</h3>
-                </li>
-                <li>
-                    <h3>2</h3>
-                </li>
-                <li>
-                    <h3>3</h3>
-                </li>
-                <li>
-                    <h3>4</h3>
-                </li>
-                <li>
-                    <h3>5</h3>
-                </li>
-                <li>
-                    <h3>6</h3>
-                </li>
-            </ul>
-        </div>
-        <div class="chosen-genres">
-
-        </div>
-    </div>
-
-    <div class="game-list">
-        @foreach (var item in Model)
-        {
-            <div class="game-short">
-                <figure>
-                    <div><!--<a href="~/Games/SpecificGame?id=@item.GameId">--><img src="~/Content/Image/descent.png" /><!--</a>--></div>
-                    <figcaption>
-                        <h3>@Html.DisplayFor(modelItem => item.Game_name)</h3>
-                        <span>Stars</span>
-                        <a href="~/Games/SpecificGame?id=@item.GameId">Take a look</a>
-                    </figcaption>
-                </figure>
-            </div>
-        }
-    </div>
-
-    <p class="create-new">
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <!--<table>
-        <tr>
-            <th></th>
-            <th>Id</th>
-            <th>Tite</th>
-            <th>Game Time</th>
-
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GameId)
-                </td>
-                <td>
-                    <a href="~/Games/SpecificGame?id=@item.GameId">
-                        @Html.DisplayFor(modelItem => item.Game_name)
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Game_time)
-                </td>
-            </tr>
-        }
-
-
-    </table>-->
-</div>
+</table>

@@ -28,6 +28,7 @@ namespace GamerForum.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Administrators")]
         public ActionResult AdminProfile()
         {
             return View();
