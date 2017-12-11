@@ -36,7 +36,7 @@ namespace GamerForum.Controllers
         }
 
         // GET: Games/Create
-        [Authorize(Roles = "Administrators")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
@@ -46,7 +46,7 @@ namespace GamerForum.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize(Roles = "Administrators")]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "GameId,Game_name,Game_url,Description,Game_time,Number_of_Players,Year_releashed")] Games games)
         {
@@ -61,7 +61,7 @@ namespace GamerForum.Controllers
         }
 
         // GET: Games/Edit/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace GamerForum.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize(Roles = "Administrators")]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "GameId,Game_name,Game_url,Description,Game_time,Number_of_Players,Year_releashed")] Games games)
         {
@@ -99,7 +99,7 @@ namespace GamerForum.Controllers
         }
 
         // GET: Games/Delete/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -117,7 +117,7 @@ namespace GamerForum.Controllers
         // POST: Games/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrators")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult DeleteConfirmed(int id)
         {
             Games games = db.Games.Find(id);
