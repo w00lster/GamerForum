@@ -5,69 +5,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="content">
+    <h1>Board Games</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create") <br />
-    @using (Html.BeginForm())
-    {
-        <p>
-        title: @Html.TextBox("searchString") <br />
-        <input type="submit" value="Filter" />
+    <p class="create-new">
+        <i class="fa fa-plus" aria-hidden="true"></i> @Html.ActionLink("Create New", "Create") <br />
+    </p>
 
-        </p>
-    }
+    <div class="genre">
 
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.GameId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Game_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Game_time)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Number_of_Players)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year_releashed)
-        </th>
-        <th></th>
-    </tr>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameId)
-        </td>
-        <td>
-           <a href="~/Games/Details/@item.GameId">@item.Game_name</a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Game_time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Number_of_Players)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year_releashed)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GameId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GameId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GameId })
-        </td>
-    </tr>
-}
+    <div class="game-list">
+        @foreach (var item in Model)
+        {
+            <div class="game">
+                <a href="~/Games/Details/@item.GameId">
+                    <figure>
+                        <img src="~/Content/Image/1st & Goal/frontpic.jpg" alt="" />
+                        <figcaption>
+                            <h2>@item.Game_name</h2>
+                            <p><i class="fa fa-star" aria-hidden="true"></i> 9.7
+                                <img src="~/Content/Image/genre.png" /> Genre</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        }
+    </div>
 
-</table>
+    <!--<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GameId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number_of_Players)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year_releashed)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameId)
+                </td>
+                <td>
+                    <a href="~/Games/Details/@item.GameId">@item.Game_name</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Game_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number_of_Players)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year_releashed)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GameId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.GameId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GameId })
+                </td>
+            </tr>
+        }
+
+    </table>-->
+</div>
