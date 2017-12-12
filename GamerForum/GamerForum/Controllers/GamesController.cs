@@ -15,9 +15,16 @@ namespace GamerForum.Controllers
         private GamerForumContext db = new GamerForumContext();
 
         // GET: Games
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Games.ToList());
+            var games = from a in db.Games
+                        select a;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                games = games.Where(s => s.Game_name.Contains(searchString));
+            }
+            return View(games);
         }
 
         // GET: Games/Details/5
