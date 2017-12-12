@@ -193,6 +193,7 @@
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Wanted_gamesController.cs" />
     <Compile Include="DAL\GamerForumInitilizer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -394,6 +395,11 @@
     <Content Include="Views\Games\Delete.cshtml" />
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Games\Edit.cshtml" />
+    <Content Include="Views\Wanted_games\Create.cshtml" />
+    <Content Include="Views\Wanted_games\Delete.cshtml" />
+    <Content Include="Views\Wanted_games\Details.cshtml" />
+    <Content Include="Views\Wanted_games\Edit.cshtml" />
+    <Content Include="Views\Wanted_games\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
