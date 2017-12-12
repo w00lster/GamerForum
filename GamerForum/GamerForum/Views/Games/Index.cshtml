@@ -63,9 +63,12 @@
             @Html.DisplayFor(modelItem => item.Year_releashed)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GameId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GameId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GameId })
+            @Html.ActionLink("Details", "Details", new { id = item.GameId }) |
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.GameId}) <br />
+                @Html.ActionLink("Delete", "Delete", new { id = item.GameId })
+            }
         </td>
     </tr>
 }
