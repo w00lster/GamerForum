@@ -15,62 +15,43 @@
 }
 
 /* GRID SYSTEMET */
-.container {
-    display: grid;
-    grid-template-rows: 5em auto;
-    grid-template-areas: "nav" "content";
-}
-
-#navbar {
-    display: grid;
-    grid-template-columns: 12em repeat(5, 15em) auto;
-    grid-area: nav;
-    background: #222;
-    align-items: center;
-}
-
-    #navbar img {
-        height: 5em;
-    }
-
 .content {
     grid-area: content;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1em;
 }
 
 #front_page.content {
     display: grid;
-    grid-template-rows: 1fr 20em 1fr 1fr;
+    grid-template-rows: 20em 1fr 1fr;
 }
 
-/* NAVBAR START */
+/* NAVBAR START - fjerner vi navigationsbarren, kan dette også fjernes*/
 .nav-point:first-child {
     text-align: left;
 }
 
-    .nav-point:first-child:hover {
-        border: none;
-        padding: 0;
-    }
+.nav-point:first-child:hover {
+    border: none;
+    padding: 0;
+}
 
 .nav-point {
     text-align: center;
 }
 
-    .nav-point a, .nav-point a:visited, .nav-point a:hover, .nav-point a:active {
-        color: #fefefe;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: block;
-    }
+.nav-point a, .nav-point a:visited, .nav-point a:hover, .nav-point a:active {
+    color: #fefefe;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
 
-    .nav-point:hover {
-        border-top: 1px solid #fefefe;
-        border-bottom: 1px solid #fefefe;
-        padding: .5em 0;
-    }
+.nav-point:hover {
+    border-top: 1px solid #fefefe;
+    border-bottom: 1px solid #fefefe;
+    padding: .5em 0;
+}
 /* NAVBAR END */
 
 /*PANELBAR START */
@@ -83,32 +64,32 @@
     padding: 1.3em .7em;
 }
 
-    .panel-bar ul {
-        list-style: none;
-    }
+.panel-bar ul {
+    list-style: none;
+}
 
-        .panel-bar ul li {
-            display: inline-block;
-            font-size: .7em;
-            margin: 0 1.3em;
-            font-family: aniron;
-            float: left;
-        }
+.panel-bar ul li {
+    display: inline-block;
+    font-size: .7em;
+    margin: 0 1.3em;
+    font-family: aniron;
+    float: left;
+}
 
-            .panel-bar ul li.right-panel-elements {
-                float: right;
-            }
+.panel-bar ul li.right-panel-elements {
+    float: right;
+}
 
 
-    .panel-bar i {
-        margin-right: .7em;
-        font-size: 1.5em;
-    }
+.panel-bar i {
+    margin-right: .7em;
+    font-size: 1.5em;
+}
 
-    .panel-bar ul li:hover {
-        color: #fff;
-        cursor: pointer;
-    }
+.panel-bar ul li:hover {
+    color: #fff;
+    cursor: pointer;
+}
 /*PANELBAR END*/
 
 /* FRONTPAGE STYLING START */
@@ -116,7 +97,7 @@
     background-image: url("../Image/background.jpeg");
     background-size: cover;
     width: 100%;
-    min-height: 100vh;
+    grid-row: 1 / 5;
 }
 
 #front_page_wrapper * {
@@ -137,7 +118,7 @@
     position: relative;
     z-index: 1;
     grid-column: 1 / 13;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     display: grid;
     grid-template-columns: 3fr 20em 1fr 20em 1fr 20em 3fr;
 }

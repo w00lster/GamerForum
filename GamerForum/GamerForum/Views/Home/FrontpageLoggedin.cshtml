@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<GamerForum.Models.Games>
 @{
     ViewBag.Title = "Home Page";
+    int numberOfgames = Model.Count();
 }
 
 @*<div class="jumbotron">
@@ -11,50 +12,42 @@
 @*This is just a comment*@
 <div id="front_page_wrapper" class="general-wrapper">
     <div class="front_page_secondary_wrapper">
-        <div class="container">
+        <div class="content">
             <!--Circles Start-->
-            <div class="row front_page_circles">
+            <div class="front_page_circles">
                 <!-- f1_container -->
-                <div class="col-md-4">
-                    <!-- #f1_card.shadow -->
-                    <div class="circle-wrapper">
-                        <div class="circle_info face">
-                            <!-- front face-->
-                            <h2>@Model.Count()</h2>
-                            <p>BOARD GAMES</p>
-                        </div>
+                <div class="circle-wrapper">
+                    <div class="circle_info face">
+                        <!-- front face-->
+                        <h2>@numberOfgames</h2>
+                        <p>BOARD GAMES</p>
+                    </div>
 
-                        <div class="back face center">
-                            <p>NEWEST GAME</p>
-                            <!--I øjeblikket viser den statiske udgave, så det skal vi have kigget på!!-->
-                            <a href="~/Games/SpecificGame?id=@Model.Count()"><img src="~/Content/Image/descent.png" /></a>
-                        </div>
+                    <div class="back face center">
+                        <p>NEWEST GAME</p>
+                        <a href="~/Games/details?id=@Model.Count()"><img src="~/Content/Image/descent.png" /></a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="circle-wrapper">
-                        <div class="circle_info face">
-                            <h2>221</h2>
-                            <p>REVIEWS</p>
-                        </div>
+                <div class="circle-wrapper">
+                    <div class="circle_info face">
+                        <h2>221</h2>
+                        <p>REVIEWS</p>
+                    </div>
 
-                        <div class="back face center">
-                            <p>BEST RATED</p>
-                            <a href="~/Games/SpecificGame"><img src="~/Content/Image/relic.png" /></a>
-                        </div>
+                    <div class="back face center">
+                        <p>BEST RATED</p>
+                        <img src="~/Content/Image/relic.png" />
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="circle-wrapper">
-                        <div class="circle_info face">
-                            <h2>17</h2>
-                            <p>NEW REVIEWS THIS WEEK</p>
-                        </div>
+                <div class="circle-wrapper">
+                    <div class="circle_info face">
+                        <h2>17</h2>
+                        <p>NEW REVIEWS THIS WEEK</p>
+                    </div>
 
-                        <div class="back face center">
-                            <p>NEWLY RATED</p>
-                            <a href="~/Games/SpecificGame"><img src="~/Content/Image/tickettoride.png" /></a>
-                        </div>
+                    <div class="back face center">
+                        <p>NEWLY RATED</p>
+                        <img src="~/Content/Image/tickettoride.png" />
                     </div>
                 </div>
             </div>

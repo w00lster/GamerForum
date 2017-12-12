@@ -12,8 +12,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="container">
-        <div id="navbar">
+        <!--<div id="navbar">
             <div class="nav-point">
                 <a href='@Url.Action("Index", "Home")'>
                     <img src='@Url.Content("~/Content/Image/logo.png")' />
@@ -24,7 +23,7 @@
             <div class="nav-point">@Html.ActionLink("We Recommend", "Recommendations", "Home")</div>
             <div class="nav-point">@Html.ActionLink("Users", "Users", "Home")</div>
             <div class="nav-point">@Html.ActionLink("About Us", "About", "Home")</div>
-        </div>
+        </div>-->
         <!--<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
                 <div class="navbar-collapse collapse">
@@ -50,6 +49,5 @@
         @Scripts.Render("~/bundles/jquery")
         <!--@Scripts.Render("~/bundles/bootstrap")-->
         @RenderSection("scripts", required: false)
-    </div>
 </body>
 </html>
