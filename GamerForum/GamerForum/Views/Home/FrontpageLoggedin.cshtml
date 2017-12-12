@@ -15,12 +15,10 @@
         <div class="content">
             <!--Circles Start-->
             <div class="front_page_circles">
-                <!-- f1_container -->
                 <div class="circle-wrapper">
                     <div class="circle_info face">
                         <!-- front face-->
-                        <h2>@numberOfgames</h2>
-                        <p>BOARD GAMES</p>
+                        <h2>Home</h2>
                     </div>
 
                     <div class="back face center">
@@ -30,8 +28,20 @@
                 </div>
                 <div class="circle-wrapper">
                     <div class="circle_info face">
-                        <h2>221</h2>
-                        <p>REVIEWS</p>
+                        <!-- front face-->
+                        <h2>@numberOfgames</h2>
+                        <p>Board games in total</p>
+                    </div>
+
+                    <div class="back face center">
+                        <p>NEWEST GAME</p>
+                        <a href="~/Games/details?id=@Model.Count()"><img src="~/Content/Image/descent.png" /></a>
+                    </div>
+                </div>
+                <div class="circle-wrapper">
+                    <div class="circle_info face">
+                        <h2>8</h2>
+                        <p>Recommended games</p>
                     </div>
 
                     <div class="back face center">
@@ -41,8 +51,8 @@
                 </div>
                 <div class="circle-wrapper">
                     <div class="circle_info face">
-                        <h2>17</h2>
-                        <p>NEW REVIEWS THIS WEEK</p>
+                        <h2>221</h2>
+                        <p>Reviews of board games</p>
                     </div>
 
                     <div class="back face center">
@@ -52,10 +62,17 @@
                 </div>
             </div>
             <!--Circles End-->
+            <!-- Front page search start -->
+            <div id="search-front">
+                @using (Html.BeginForm())
+                {
+                    <input type="text" id="search-field" placeholder="Search amongst our @numberOfgames board games" />
+                    <button type="submit" onclick="" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                }
+            </div>
+            <!-- Front page search end -->
             <!--Random Messages Start-->
-            <div class="random-messages">
-                <p>Couldn't find the game you were looking for? Send us a request for a game you would like to see and we'll take a look</p>
-                <p><a href="#">Click here</a> to zoom on over to our request page!</p>
+            <div id="random-messages">
             </div>
             <!--Random Messages End-->
         </div>
@@ -73,3 +90,27 @@
         <!-- Logged in panel End-->
     </div>
 </div>
+
+<script>
+    (function () {
+        var randomTexts = [
+            {
+                text: "<p>Couldn't find the game you were looking for? Send us a request for a game you would like to see and we'll take a look</p> <p><a href= '#' > Click here</a > to zoom on over to our request page!</p >",
+            },
+            {
+                text: "text2",
+            },
+            {
+                text: "text3",
+            },
+            {
+                text: "text4",
+            },
+            {
+                text: "text5",
+            }
+        ];
+        var randomText = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+        document.getElementById("random-messages").innerHTML = '<p>' + randomText.text + '</p>';
+    })();
+</script>

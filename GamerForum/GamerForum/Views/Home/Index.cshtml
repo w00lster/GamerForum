@@ -15,12 +15,10 @@
         <div id="front-page" class="content">
             <!--Circles Start-->
             <div class="front_page_circles">
-                <!-- f1_container -->
                 <div class="circle-wrapper">
                     <div class="circle_info face">
                         <!-- front face-->
-                        <h2>@numberOfgames</h2>
-                        <p>BOARD GAMES</p>
+                        <h2>Home</h2>
                     </div>
 
                     <div class="back face center">
@@ -30,8 +28,20 @@
                 </div>
                 <div class="circle-wrapper">
                     <div class="circle_info face">
-                        <h2>221</h2>
-                        <p>REVIEWS</p>
+                        <!-- front face-->
+                        <h2>@numberOfgames</h2>
+                        <p>Board games in total</p>
+                    </div>
+
+                    <div class="back face center">
+                        <p>NEWEST GAME</p>
+                        <a href="~/Games/details?id=@Model.Count()"><img src="~/Content/Image/descent.png" /></a>
+                    </div>
+                </div>
+                <div class="circle-wrapper">
+                    <div class="circle_info face">
+                        <h2>8</h2>
+                        <p>Recommended games</p>
                     </div>
 
                     <div class="back face center">
@@ -41,8 +51,8 @@
                 </div>
                 <div class="circle-wrapper">
                     <div class="circle_info face">
-                        <h2>17</h2>
-                        <p>NEW REVIEWS THIS WEEK</p>
+                        <h2>221</h2>
+                        <p>Reviews of board games</p>
                     </div>
 
                     <div class="back face center">
@@ -52,6 +62,15 @@
                 </div>
             </div>
             <!--Circles End-->
+            <!-- Search Start -->
+            <div id="search-front">
+                @using (Html.BeginForm())
+                {
+                    <input type="text" id="search-field" placeholder="Search amongst our @numberOfgames board games"/>
+                    <button type="submit" onclick="" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                }
+            </div>
+            <!-- Search End-->
             <!--Login Start-->
             <div class="login-form">
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -73,7 +92,8 @@
                 
             <div class="login-text-frontpage">
                 <p>Not a part of our community yet?</p>
-                <p>Register now, it's easy and free, <br />and we don't spam you with e-mails! <a href="~/Account/Register">Click here to register</a></p>
+                <p>Register now, it's easy and free, and we don't spam you with e-mails!</p>
+                <p><a href="~/Account/Register">Click here to register</a></p>
             </div>
             <!--Login End-->
         </div>
