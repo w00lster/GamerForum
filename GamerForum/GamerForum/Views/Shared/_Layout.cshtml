@@ -12,42 +12,52 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-        <!--<div id="navbar">
-            <div class="nav-point">
-                <a href='@Url.Action("Index", "Home")'>
-                    <img src='@Url.Content("~/Content/Image/logo.png")' />
-                </a>
-            </div>
-            <div class="nav-point">@Html.ActionLink("Home", "Index", "Home")</div>
-            <div class="nav-point">@Html.ActionLink("Board Games", "Index", "Games")</div>
-            <div class="nav-point">@Html.ActionLink("We Recommend", "Recommendations", "Home")</div>
-            <div class="nav-point">@Html.ActionLink("Users", "Users", "Home")</div>
-            <div class="nav-point">@Html.ActionLink("About Us", "About", "Home")</div>
-        </div>-->
-        <!--<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-header">
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li id="nav-logo">
-                            <a href='@Url.Action("Index", "Home")'>
-                                <img src='@Url.Content("~/Content/Image/logo.png")' />
-                            </a>
-                        </li>
-                        <li></li>
-                        <li>@Html.ActionLink("Board Games", "Index", "Games")</li>
-                        <li>@Html.ActionLink("We Recommend", "Recommendations", "Home")</li>
-                        <li>@Html.ActionLink("Users", "Users", "Home")</li>
-                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                    </ul>
+    <div class="top-bar">
+        <a href="~/Home/Index"><img src="~/Content/Image/logo.png" /></a>
+        <div id="general-search" class="search">
+            @using (Html.BeginForm("Index", "Games"))
+            {
+                @Html.TextBox("searchString") <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            }
+        </div>
+    </div>
+    <!--<div id="navbar">
+        <div class="nav-point">
+            <a href='@Url.Action("Index", "Home")'>
+                <img src='@Url.Content("~/Content/Image/logo.png")' />
+            </a>
+        </div>
+        <div class="nav-point">@Html.ActionLink("Home", "Index", "Home")</div>
+        <div class="nav-point">@Html.ActionLink("Board Games", "Index", "Games")</div>
+        <div class="nav-point">@Html.ActionLink("We Recommend", "Recommendations", "Home")</div>
+        <div class="nav-point">@Html.ActionLink("Users", "Users", "Home")</div>
+        <div class="nav-point">@Html.ActionLink("About Us", "About", "Home")</div>
+    </div>-->
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li id="nav-logo">
+                        <a href='@Url.Action("Index", "Home")'>
+                            <img src='@Url.Content("~/Content/Image/logo.png")' />
+                        </a>
+                    </li>
+                    <li></li>
+                    <li>@Html.ActionLink("Board Games", "Index", "Games")</li>
+                    <li>@Html.ActionLink("We Recommend", "Recommendations", "Home")</li>
+                    <li>@Html.ActionLink("Users", "Users", "Home")</li>
+                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                </ul>
 
-                </div>
             </div>
-        </div>-->
-        @RenderBody()
-        <footer></footer>
+        </div>
+    </div>-->
+    @RenderBody()
+    <footer></footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        <!--@Scripts.Render("~/bundles/bootstrap")-->
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    <!--@Scripts.Render("~/bundles/bootstrap")-->
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/Js/Scripts.js"></script>
 </body>
 </html>

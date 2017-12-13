@@ -320,11 +320,8 @@
     <Content Include="Content\Image\Go\frontpic.jpg" />
     <Content Include="Content\Image\Go\go1.jpg" />
     <Content Include="Content\Js\GameList.js" />
-    <Content Include="Content\Js\LightSlider.js" />
-    <Content Include="Content\Js\modernizr.js" />
-    <Content Include="Content\Js\TouchEffect.js" />
+    <Content Include="Content\Js\Scripts.js" />
     <Content Include="Content\MainStyle.css" />
-    <Content Include="Content\Styles\LightSlider.css" />
     <Content Include="Content\Styles\Reset.css" />
     <Content Include="Content\Styles\Style.css" />
     <Content Include="favicon.ico" />

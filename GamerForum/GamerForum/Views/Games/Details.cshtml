@@ -5,71 +5,88 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="content">
+    <p style="grid-column: 10/12; grid-row: 1/2; justify-self: end;">
+        @if (User.IsInRole("Administrator")) { 
+        @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) 
+        }
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <h1>@Html.DisplayFor(model => model.Game_name) <span>@Html.DisplayFor(model => model.Year_releashed)</span></h1>
 
-<div>
-    <h4>Games</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Game_name)
-        </dt>
+    <div class="game-images" style="grid-column: 2 / 6">
+        @foreach (var images in Model.Images)
+            {
+            <figure><img src="@images.Image_path" alt="No Images" /></figure>
+        }
+    </div>
+    <div class="game-info" style="grid-column: 6 / 12">
+        Recommended players: @Html.DisplayFor(model => model.Number_of_Players)<br />
+        Game time: @Html.DisplayFor(model => model.Game_time)<br />
+        Games site: @Html.DisplayNameFor(model => model.Game_url)
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Game_name)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Game_url)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Game_url)
-        </dd>
+    <div style="grid-column: 2 / 12;">
+        <hr />
+        <!--
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Game_name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Game_name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Game_url)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Game_time)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Game_url)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Game_time)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Number_of_Players)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Number_of_Players)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Game_time)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Year_releashed)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Game_time)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Year_releashed)
-        </dd>
-        <dd>
-            @foreach(var images in Model.Images){
-                <img src="@images.Image_path" alt="No Images" />
-            }
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Number_of_Players)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Number_of_Players)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Year_releashed)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Year_releashed)
+            </dd>
+            <dd>
+                @foreach (var images in Model.Images)
+                {
+                    <img src="@images.Image_path" alt="No Images" />
+                }
+            </dd>
+
+        </dl>-->
+    </div>
+
 </div>
-<p>
-    @if (User.IsInRole("Administrator")) {
-                @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) <br />
-                @Html.ActionLink("Delete", "Delete", new { id = Model.GameId })
-    } |
-    @Html.ActionLink("Back to List", "Index")
-</p>
