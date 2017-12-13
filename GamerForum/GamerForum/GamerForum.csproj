@@ -321,7 +321,6 @@
     <Content Include="Content\Js\GameList.js" />
     <Content Include="Content\Js\LightSlider.js" />
     <Content Include="Content\Js\modernizr.js" />
-    <Content Include="Content\Js\Scripts.js" />
     <Content Include="Content\Js\TouchEffect.js" />
     <Content Include="Content\MainStyle.css" />
     <Content Include="Content\Styles\LightSlider.css" />

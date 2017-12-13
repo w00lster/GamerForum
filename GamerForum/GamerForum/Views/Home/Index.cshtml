@@ -63,10 +63,11 @@
             </div>
             <!--Circles End-->
             <!-- Search Start -->
-            <div id="search-front" class="search">
-                @using (Html.BeginForm("Index", "Games"))
+            <div id="search-front">
+                @using (Html.BeginForm())
                 {
-                    @Html.TextBox("searchString") <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <input type="text" id="search-field" placeholder="Search amongst our @numberOfgames board games"/>
+                    <button type="submit" onclick="" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
                 }
             </div>
             <!-- Search End-->

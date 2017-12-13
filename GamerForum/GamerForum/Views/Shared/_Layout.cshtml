@@ -12,15 +12,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="top-bar">
-        <a href="~/Home/Index"><img src="~/Content/Image/logo.png" /></a>
-        <div id="general-search" class="search">
-            @using (Html.BeginForm("Index", "Games"))
-            {
-                @Html.TextBox("searchString") <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-            }
-        </div>
-    </div>
         <!--<div id="navbar">
             <div class="nav-point">
                 <a href='@Url.Action("Index", "Home")'>
@@ -58,6 +49,5 @@
         @Scripts.Render("~/bundles/jquery")
         <!--@Scripts.Render("~/bundles/bootstrap")-->
         @RenderSection("scripts", required: false)
-    <script src="~/Content/Js/Scripts.js"></script>
 </body>
 </html>
