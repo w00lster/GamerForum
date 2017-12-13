@@ -29,48 +29,52 @@
 .top-bar {
     display: grid;
     grid-template-columns: 12em auto;
-    background: #473335;
 }
 
-    /* TOP BAR */
-    .top-bar img {
-        grid-column: 1 / 2;
-        width: 100%;
-        height: 100%;
-    }
+/* General style */
+#body-wrapper {
+    background: no-repeat center center fixed;
+    background-size: cover;
+}
 
-    .top-bar a {
-        height: 100%;
-    }
+/* TOP BAR */
+.top-bar img {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+}
 
-    .top-bar #general-search {
-        grid-column: 2 / 3;
-        align-self: center;
-    }
+.top-bar a {
+    height: 100%;
+}
+
+.top-bar #general-search {
+    grid-column: 2 / 3;
+    align-self: stretch;
+}
 
 /* GENERAL SEARCH */
 #general-search form {
     display: grid;
     grid-template-columns: auto 3.5em;
+    align-self: center;
+    height: 100%;
+    padding: 1em;
+    background: #473335;
 }
 
-.search {
+.search * {
+    font-size: 1.1em;
+}
+
+.search input {
+    border-radius: .2em;
+    border: 1px;
+    width: 100%;
     padding: .5em;
-    position: relative;
+    color: #191919;
+    align-self: center;
 }
-
-    .search * {
-        font-size: 1.1em;
-    }
-
-    .search input {
-        border-radius: .2em;
-        border: 1px;
-        width: 100%;
-        padding: .5em;
-        color: #191919;
-        align-self: center;
-    }
 
 #general-search button {
     background: none;
@@ -80,34 +84,6 @@
 .search i {
     color: #548687;
 }
-
-/* NAVBAR START - fjerner vi navigationsbarren, kan dette også fjernes*/
-.nav-point:first-child {
-    text-align: left;
-}
-
-    .nav-point:first-child:hover {
-        border: none;
-        padding: 0;
-    }
-
-.nav-point {
-    text-align: center;
-}
-
-    .nav-point a, .nav-point a:visited, .nav-point a:hover, .nav-point a:active {
-        color: #fefefe;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: block;
-    }
-
-    .nav-point:hover {
-        border-top: 1px solid #fefefe;
-        border-bottom: 1px solid #fefefe;
-        padding: .5em 0;
-    }
-/* NAVBAR END */
 
 /*PANELBAR START */
 .panel-bar {
@@ -155,22 +131,15 @@
 /*PANELBAR END*/
 
 /* FRONTPAGE STYLING START */
-#front_page_wrapper {
-    background-image: url("../Image/background.jpeg");
-    background-size: cover;
-    width: 100%;
-    grid-row: 1 / 5;
-}
 
-
-.front_page_secondary_wrapper {
+/*.front_page_secondary_wrapper {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(right, rgba(0,0,0,.5), rgba(0,0,0,.5));
     background: -webkit-linear-gradient(right, rgba(0,0,0,.5), rgba(0,0,0,.5));
     background: -o-linear-gradient(right, rgba(0,0,0,.5), rgba(0,0,0,.5));
     background: -moz-linear-gradient(right, rgba(0,0,0,.5), rgba(0,0,0,.5));
-}
+}*/
 
 .front_page_circles {
     padding: 5em 0;
@@ -278,6 +247,11 @@
 
     #search-front i {
         color: #548687;
+    }
+
+    #search-front .search {
+        padding: .5em;
+        position: relative;
     }
 
 /* login form */
