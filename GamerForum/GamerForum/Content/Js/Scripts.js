@@ -10,6 +10,9 @@ if (document.getElementById("front-page")) {
 } else if (document.getElementById("wanted-games-create")) {
     document.getElementById("body-wrapper").style.backgroundPosition = "top center";
     document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground1.jpg)";
+} else if (document.getElementById("requested-games-index")) {
+    document.getElementById("body-wrapper").style.backgroundPosition = "top center";
+    document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
 } else if (document.getElementById("user-create")) {
     document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/usercreate_new.jpg)";
 } else if (document.getElementById("user-profile")) {
@@ -17,5 +20,9 @@ if (document.getElementById("front-page")) {
 } else if (document.getElementById("games")) {
     document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
 } else if (document.getElementById("create-games")) {
+    document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
+} else if (document.getElementById("specific-game")) {
+    document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
+} else if (document.getElementById("edit-game")) {
     document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
 }

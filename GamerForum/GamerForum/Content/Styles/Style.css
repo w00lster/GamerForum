@@ -503,8 +503,46 @@ b {
 
 /* SPECIFIC GAME */
 
+#specific-game .text-box {
+    grid-column: 3 / 10;
+    display: grid;
+    grid-template-columns: 20em 1fr 6em;
+}
+
+#specific-game .text-box * {
+    text-align: left;
+}
+
+#specific-game h1 {
+    grid-column: 1 / 3;
+}
+
+.make-review {
+    grid-column: 3 / 4;
+    font-size: .8em;
+}
+
+#specific-game h1 span {
+    font-size: .5em;
+    font-style: italic;
+}
+
+#specific-game h1 span:before {
+    content: "(";
+    padding-right: .5em;
+}
+
+#specific-game h1 span:after {
+    content: ")";
+    padding-left: .5em;
+}
+
+#specific-game p {
+    margin-bottom: .2em;
+}
+
 .game-images {
-    grid-column: 2 / 6;
+    grid-column: 1 / 2;
     justify-self: center;
 }
 
@@ -517,10 +555,9 @@ b {
 }
 
 .game-images figure:first-child {
-    width: 30em;
-    height: 30em;
+    width: 20em;
+    height: 20em;
     border-radius: 0;
-    background: lightblue;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -530,12 +567,28 @@ b {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    background: white;
 }
 
 .game-images figure:first-child img {
-    width: 25em;
-    height: 25em;
+    width: 15em;
+    height: 15em;
     border-radius: 0;
+    background: none;
+}
+
+.game-info {
+    padding-top: 2.2em;
+}
+
+.game-info .stars p {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.game-info .stars i {
+    padding: 0 .2em .2em;
+    color: #ffffc7;
 }
 
 /* CREATE A GAME */
@@ -640,6 +693,22 @@ b {
     grid-column: 3 / 10;
 }
 
+#requested-games-index h1 {
+    float: left;
+}
+
+#requested-games-index h1 + p {
+    float: right;
+}
+
+#requested-games-index a {
+    text-decoration: none;
+}
+
+#requested-games-index i {
+    color: #548687;
+}
+
 #requested-games-index .text-box * {
     text-align: left;
 }
@@ -656,8 +725,22 @@ b {
     padding: 1em;
 }
 
+#requested-games-index .text-box table tr td:last-child {
+    text-align: right;
+}
+
 #requested-games-index tr:nth-child(even) {
     background: rgba(240,248,255,.7)
+}
+
+#requested-games-index table i {
+    font-size: 1.3em;
+    color: #473335;
+    padding: 0 .3em;
+}
+
+#requested-games-index i:hover {
+    color: #548687;
 }
 
 /* USER PROFILE */

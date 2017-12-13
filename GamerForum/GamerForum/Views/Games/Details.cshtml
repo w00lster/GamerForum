@@ -5,89 +5,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="content">
-    <p style="grid-column: 10/12; grid-row: 1/2; justify-self: end;">
+<div id="specific-game" class="content">
+    <p class="back-to-list">
         @if (User.IsInRole("Administrator")) { 
         @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) 
         }
         @Html.ActionLink("Back to List", "Index")
     </p>
-    <h1>@Html.DisplayFor(model => model.Game_name) <span>@Html.DisplayFor(model => model.Year_releashed)</span></h1>
 
-    <div class="game-images" style="grid-column: 2 / 6">
-        @foreach (var images in Model.Images)
+    <div class="text-box">
+        <h1>@Html.DisplayFor(model => model.Game_name) <span>@Html.DisplayFor(model => model.Year_releashed)</span></h1>
+        <p class="make-review"><a href="#">[ make review ]</a></p>
+        <div class="game-images">
+            @foreach (var images in Model.Images)
             {
-            <figure><img src="@images.Image_path" alt="No Images" /></figure>
-        }
-    </div>
-    <div class="game-info" style="grid-column: 6 / 12">
-        Recommended players: @Html.DisplayFor(model => model.Number_of_Players)<br />
-        Game time: @Html.DisplayFor(model => model.Game_time)<br />
-        Games site: @Html.DisplayFor(model => model.Game_url)<br />
-        Games descritpion: @Html.DisplayFor(model => model.Description)
-    </div>
-
-
-
-    <div style="grid-column: 2 / 12;">
-        <hr />
-        <!--
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Game_name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Game_name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Game_url)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Game_url)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Game_time)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Game_time)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Number_of_Players)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Number_of_Players)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Year_releashed)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Year_releashed)
-            </dd>
-            <dd>
-                @foreach (var images in Model.Images)
-                {
-                    <img src="@images.Image_path" alt="No Images" />
-                }
-            </dd>
-
-        </dl>-->
+                <figure><img src="@images.Image_path" alt="No Images" /></figure>
+            }
+        </div>
+        <div class="game-info">
+            <div class="stars">
+                <p><i class="fa fa-star" aria-hidden="true"></i> 3.7</p>
+            </div>
+            <p>
+                <b>Recommended players:</b> @Html.DisplayFor(model => model.Number_of_Players)
+            </p>
+            <p>
+                <b>Game time:</b> @Html.DisplayFor(model => model.Game_time)
+            </p>
+            <p>
+                <b>Games site:</b> @Html.DisplayFor(model => model.Game_url)
+            </p>
+            <p><b>Descritpion:</b> </p>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
     </div>
 
 </div>
