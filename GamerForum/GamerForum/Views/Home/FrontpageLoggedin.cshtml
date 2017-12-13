@@ -10,77 +10,68 @@
         <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>*@
 @*This is just a comment*@
-<div id="front_page_wrapper" class="general-wrapper">
-    <div class="front_page_secondary_wrapper">
-        <div class="content">
-            <!--Circles Start-->
-            <div class="front_page_circles">
-                <div class="circle-wrapper">
-                    <div class="circle_info face">
-                        <!-- front face-->
-                        <h2>Home</h2>
-                    </div>
-
-                    <div class="back face center">
-                        <p>NEWEST GAME</p>
-                        <a href="~/Games/details?id=@numberOfgames"><img src="~/Content/Image/descent.png" /></a>
-                    </div>
-                </div>
-                <div class="circle-wrapper">
-                    <div class="circle_info face">
-                        <!-- front face-->
-                        <h2>@numberOfgames</h2>
-                        <p>Board games in total</p>
-                    </div>
-
-                    <a href="~/Games/Index">
-                        <div class="back face center">
-                            <p>Browse through our games here</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="circle-wrapper">
-                    <div class="circle_info face">
-                        <h2>8</h2>
-                        <p>Recommended games</p>
-                    </div>
-                    <a href="~/Games/Index">
-                        <div class="back face center">
-                            <p>See our recommendations here</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="circle-wrapper">
-                    <div class="circle_info face">
-                        <h2>221</h2>
-                        <p>Reviews of board games</p>
-                    </div>
-                    <a href="~/Games/Index">
-                        <div class="back face center">
-                            <p>Read the latest reviews</p>
-                        </div>
-                    </a>
-                </div>
+<div id="front-page" class="content">
+    <!--Circles Start-->
+    <div class="front_page_circles">
+        <div class="circle-wrapper">
+            <div class="circle_info face">
+                <!-- front face-->
+                <h2>Home</h2>
             </div>
-            <!--Circles End-->
-            <!-- Front page search start -->
-            <div id="search-front" class="search">
-                @using (Html.BeginForm("Index", "Games"))
-                {
-                    @Html.TextBox("searchString") <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                }
-            </div>
-            <!-- Front page search end -->
-            <!--Random Messages Start-->
-            <div id="random-messages">
-            </div>
-            <!--Random Messages End-->
         </div>
+        <div class="circle-wrapper">
+            <div class="circle_info face">
+                <!-- front face-->
+                <h2>@numberOfgames</h2>
+                <p>Board games in total</p>
+            </div>
+
+            <a href="~/Games/Index">
+                <div class="back face center">
+                    <p>Browse through our games here</p>
+                </div>
+            </a>
+        </div>
+        <div class="circle-wrapper">
+            <div class="circle_info face">
+                <h2>8</h2>
+                <p>Recommended games</p>
+            </div>
+            <a href="~/Games/Index">
+                <div class="back face center">
+                    <p>See our recommendations here</p>
+                </div>
+            </a>
+        </div>
+        <div class="circle-wrapper">
+            <div class="circle_info face">
+                <h2>221</h2>
+                <p>Reviews of board games</p>
+            </div>
+            <a href="~/Games/Index">
+                <div class="back face center">
+                    <p>Read the latest reviews</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--Circles End-->
+    <!-- Front page search start -->
+    <div id="search-front" class="search">
+        @using (Html.BeginForm("Index", "Games"))
+        {
+            @Html.TextBox("searchString") <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        }
+    </div>
+    <!-- Front page search end -->
+    <!--Random Messages Start-->
+    <div id="random-messages">
+    </div>
+    <!--Random Messages End-->
+</div>
 
         <!-- Logged in panel Start-->
         <!-- Logged in panel End-->
-    </div>
-</div>
 
 <script>
     (function () {

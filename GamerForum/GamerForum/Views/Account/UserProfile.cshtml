@@ -1,12 +1,45 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "UserProfile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container general-wrapper">
+<div id="user-profile" class="content">
 
-    <h2>@ViewBag.Title.</h2>
+    <div class="text-box">
+        <div class="user-image">
+            <img src="~/Content/Image/chess_piece_pawn.png" />
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> <p>Track this user for updates on his/her reviews</p>
+        </div>
+        <div class="user-info">
+            <p class="edit-profile"><a href="#">[edit profile]</a></p>
+            <h1>[Username]</h1>
+            <p><b>E-mail:</b>@User.Identity.GetUserName()</p>
+            @if (User.IsInRole("Administrator")) {
+            <p><b>User level: Administrator</b></p>
+            }
+            @if (User.IsInRole("User"))
+            {
+                <p><b>User level: User</b></p>
+            }
+            <h3>Games you have reviewed</h3>
+            <div class="user-reviewed-game">
+                <a href="~/Games/Details/22" target="_blank"><img src="~/Content/Image/Checkers/frontpic.jpg" /></a>
+                <h4 class="game-name">Checkers</h4>
+                <p class="game-rating"><i class="fa fa-star" aria-hidden="true"></i> 9.7 average rating</p>
+                <p class="your-rating"><i class="fa fa-star-o" aria-hidden="true"></i> 7 Your rating</p>
+                <p class="see-review"><a href="#">[ see review ]</a></p>
+                <p class="edit-review"><a href="#">[ edit review ]</a></p>
+            </div>
 
-    <p>Use this area to provide additional information.</p>
+            <div class="user-reviewed-game">
+                <a href="~/Games/Details/16" target="_blank"><img src="~/Content/Image/Battleship/frontpic.jpg" /></a>
+                <h4 class="game-name">Battleship</h4>
+                <p class="game-rating"><i class="fa fa-star" aria-hidden="true"></i> 9.7 average rating</p>
+                <p class="your-rating"><i class="fa fa-star-o" aria-hidden="true"></i> 7 Your rating</p>
+                <p class="see-review"><a href="#">[ see review ]</a></p>
+                <p class="edit-review"><a href="#">[ edit review ]</a></p>
+            </div>
+        </div>
+    </div>
 </div>
