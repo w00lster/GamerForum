@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using GamerForum.Models;
 using GamerForum.Infrastructure;
+using System.Data.SqlClient;
 
 namespace GamerForum.Controllers
 {
@@ -165,9 +166,17 @@ namespace GamerForum.Controllers
                 var user = new AppUser { UserName = model.Email, Email = model.Email, DayCreated = DateTime.Now  };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 
+                
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    using(var context = new GamerForumContext())
+                    {
+
+                        var parameter = new SqlParameter("@userId", user.Id);
+                        context.Database.ExecuteSqlCommand("exec InsertIntoRoles @userId", parameter);
+                    }
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
