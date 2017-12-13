@@ -1,11 +1,14 @@
 ﻿using GamerForum.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace GamerForum.Controllers
 {
@@ -14,6 +17,7 @@ namespace GamerForum.Controllers
         private static GamerForumContext db = new GamerForumContext();
 
         public static List<Games> games = db.Games.ToList();
+
 
         [AllowAnonymous]
         public ActionResult Index()
@@ -59,5 +63,22 @@ namespace GamerForum.Controllers
         {
             return View();
         }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public  ActionResult Logout()
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("index");
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
     }
 }

@@ -193,6 +193,7 @@
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Wanted_gamesController.cs" />
     <Compile Include="DAL\GamerForumInitilizer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -319,11 +320,8 @@
     <Content Include="Content\Image\Go\frontpic.jpg" />
     <Content Include="Content\Image\Go\go1.jpg" />
     <Content Include="Content\Js\GameList.js" />
-    <Content Include="Content\Js\LightSlider.js" />
-    <Content Include="Content\Js\modernizr.js" />
-    <Content Include="Content\Js\TouchEffect.js" />
+    <Content Include="Content\Js\Scripts.js" />
     <Content Include="Content\MainStyle.css" />
-    <Content Include="Content\Styles\LightSlider.css" />
     <Content Include="Content\Styles\Reset.css" />
     <Content Include="Content\Styles\Style.css" />
     <Content Include="favicon.ico" />
@@ -394,6 +392,11 @@
     <Content Include="Views\Games\Delete.cshtml" />
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Games\Edit.cshtml" />
+    <Content Include="Views\Wanted_games\Create.cshtml" />
+    <Content Include="Views\Wanted_games\Delete.cshtml" />
+    <Content Include="Views\Wanted_games\Details.cshtml" />
+    <Content Include="Views\Wanted_games\Edit.cshtml" />
+    <Content Include="Views\Wanted_games\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
