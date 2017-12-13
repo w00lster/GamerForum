@@ -488,4 +488,93 @@
 }
 
 /* REQUEST A GAME */
+.wanted-games > div {
+    grid-column: 3 / 7;
+    background: #FCAA67;
+    padding: 2em;
+    margin-top: 1em;
+    border-radius: .3em;
+}
 
+.wanted-games > div * {
+    color: #473335;
+    text-align: center;
+}
+
+.wanted-games > div h1 {
+     padding: 0 0 .5em;
+ }
+
+.wanted-games p {
+    margin-bottom: 1em;
+    line-height: 1.2em;
+}
+
+.wanted-games a, .wanted-games a:visited, .wanted-games a:hover, .wanted-games a:active {
+    color: #548687;
+    font-weight: bold;
+}
+
+.wanted-games form {
+    margin: auto;
+}
+
+.wanted-games form input {
+    display: block;
+    margin: auto;
+    padding: .7em .5em;
+    border-radius: .3em;
+    border: 1px;
+    width: 25em;
+}
+
+.wanted-games form label {
+    margin: auto;
+    display: block;
+    margin: 1em 0em .5em;
+    font-weight: bold;
+}
+
+.wanted-games form label span {
+    font-weight: normal;
+    font-style: italic;
+    font-size: .8em;
+}
+
+.wanted-games button {
+    display: block;
+    margin: auto;
+    background: #548687;
+    color: rgb(240,248,255);
+    border-radius: .2em;
+    border: 1px solid #548687;
+    padding: .5em;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+
+.back-to-list {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 1em;
+}
+
+.back-to-list a, .back-to-list a:visited, .back-to-list a:hover, .back-to-list a:active {
+    color: #FCAA67;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-list i {
+    color: #FCAA67;
+}
+
+.back-to-list a:hover, .back-to-list a:hover i {
+    color: #FFFFC7;
+}

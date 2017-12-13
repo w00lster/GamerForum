@@ -5,41 +5,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="content">
-    <h1>Create</h1>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <p>Are you missing a game from the database? You can request games here. Have you made sure, that the game you want isn't allready requested - read the full list of requested games <a href="~/Views/Wanted_games/Details.cshtml">here</a>.</p>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Wanted_Game_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Wanted_Game_Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Wanted_Game_Name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Wanted_Game_Url, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Wanted_Game_Url, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Wanted_Game_Url, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
+<div id="wanted-games-create" class="content wanted-games">
+    <p class="back-to-list">
+        <a href="~/Wanted_games/Index"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to list</a>
+    </p>
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        <h1>Request a game</h1>
+        <p>Are you missing a game from the database? You can request games here. Have you made sure, that the game you want isn't allready requested - read the full list of requested games <a href="~/Views/Wanted_games/Details.cshtml">here</a>.</p>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label for="Wanted_Game_Name">Name of the game you want</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Wanted_Game_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Wanted_Game_Name, "")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Wanted_Game_Url">Do you have a link for the game? <span>(optional)</span></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Wanted_Game_Url, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Wanted_Game_Url, "")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Send request</button>
+                    <!--<input type="submit" value="Send request" class="btn"/>-->
+                </div>
+            </div>
+        }
     </div>
 </div>
+
