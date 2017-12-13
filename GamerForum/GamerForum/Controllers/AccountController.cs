@@ -170,7 +170,6 @@ namespace GamerForum.Controllers
                 
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     using(var context = new GamerForumContext())
                     {
 
