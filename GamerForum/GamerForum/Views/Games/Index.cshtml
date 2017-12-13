@@ -9,7 +9,7 @@
     <h1>Board Games</h1>
     @if (User.IsInRole("Administrator")) { 
     <p class="create-new">
-        <i class="fa fa-plus" aria-hidden="true"></i> @Html.ActionLink("Create New", "Create") <br />
+        <a href="~/Games/Create"><i class="fa fa-plus" aria-hidden="true"></i> Create new</a>
     </p>
     }
     <div class="genre">

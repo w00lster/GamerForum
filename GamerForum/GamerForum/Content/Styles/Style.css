@@ -109,6 +109,8 @@ b {
     height: 100%;
     padding: 1em;
     background: #473335;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
 }
 
 .search * {
@@ -143,39 +145,39 @@ b {
     z-index: 2;
 }
 
-    .panel-bar * {
-        color: rgb(240,248,255);
-    }
+.panel-bar * {
+    color: rgb(240,248,255);
+}
 
-    .panel-bar a, .panel-bar a:hover, .panel-bar a:visited {
-        color: rgb(240,248,255);
-    }
+.panel-bar a, .panel-bar a:hover, .panel-bar a:visited {
+    color: rgb(240,248,255);
+}
 
-    .panel-bar ul {
-        list-style: none;
-    }
+.panel-bar ul {
+    list-style: none;
+}
 
-        .panel-bar ul li {
-            display: inline-block;
-            font-size: .7em;
-            margin: 0 1.3em;
-            font-family: 'Open Sans';
-            float: left;
-        }
+.panel-bar ul li {
+    display: inline-block;
+    font-size: .7em;
+    margin: 0 1.3em;
+    font-family: 'Open Sans';
+    float: left;
+}
 
-            .panel-bar ul li.right-panel-elements {
-                float: right;
-            }
+.panel-bar ul li.right-panel-elements {
+    float: right;
+}
 
-    .panel-bar i {
-        margin-right: .7em;
-        font-size: 1.5em;
-    }
+.panel-bar i {
+    margin-right: .7em;
+    font-size: 1.5em;
+}
 
-    .panel-bar ul li:hover {
-        color: #fff;
-        cursor: pointer;
-    }
+.panel-bar ul li:hover {
+    color: #fff;
+    cursor: pointer;
+}
 /*PANELBAR END*/
 
 /* FRONTPAGE STYLING START */
@@ -237,31 +239,31 @@ b {
     backface-visibility: hidden;
 }
 
-    .face.back {
-        display: block;
-        transform: rotateY(180deg);
-        padding: 5.3em 2em;
-        font-size: 1.3em;
-    }
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+    padding: 5.3em 2em;
+    font-size: 1.3em;
+}
 
-        .face.back img {
-            max-height: 11em;
-            max-width: 11em;
-            margin-top: 1em;
-        }
+.face.back img {
+    max-height: 11em;
+    max-width: 11em;
+    margin-top: 1em;
+}
 
 .circle_info {
     padding-top: 6em;
 }
 
-    .circle_info > h2 {
-        font-size: 4em;
-    }
+.circle_info > h2 {
+    font-size: 4em;
+}
 
-    .circle_info h2, .circle_info p, .back.face h2, .back.face p {
-        font-family: Ubuntu;
-        text-transform: uppercase;
-    }
+.circle_info h2, .circle_info p, .back.face h2, .back.face p {
+    font-family: Ubuntu;
+    text-transform: uppercase;
+}
 
 /* search field - frontpage */
 #search-front {
@@ -271,27 +273,27 @@ b {
     background: none;
 }
 
-    #search-front input {
-        width: 30em;
-    }
+#search-front input {
+    width: 30em;
+}
 
-    #search-front.search button {
-        border: none;
-        background: none;
-        position: absolute;
-        top: .8em;
-        right: .5em;
-        cursor: pointer;
-    }
+#search-front.search button {
+    border: none;
+    background: none;
+    position: absolute;
+    top: .8em;
+    right: .5em;
+    cursor: pointer;
+}
 
-    #search-front i {
-        color: #548687;
-    }
+#search-front i {
+    color: #548687;
+}
 
-    #search-front .search {
-        padding: .5em;
-        position: relative;
-    }
+#search-front .search {
+    padding: .5em;
+    position: relative;
+}
 
 /* login form */
 .login-form {
@@ -299,25 +301,25 @@ b {
     grid-row: 4 / 5;
 }
 
-    .login-form form {
-        display: grid;
-        grid-template-columns: 2fr 2fr 1fr;
-        grid-template-rows: 1fr;
-        padding-top: 3em;
-    }
+.login-form form {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    padding-top: 3em;
+}
 
-    .login-form * {
-        font-size: 1.1em;
-    }
+.login-form * {
+    font-size: 1.1em;
+}
 
-    .login-form label {
-        display: block;
-        font-size: .9em;
-        padding-bottom: .3em;
-        padding-left: .2em;
-        color: rgb(240,248,255);
-        font-weight: bold;
-    }
+.login-form label {
+    display: block;
+    font-size: .9em;
+    padding-bottom: .3em;
+    padding-left: .2em;
+    color: rgb(240,248,255);
+    font-weight: bold;
+}
 
 #front-page .login-form input {
     width: 80%;
@@ -363,17 +365,17 @@ b {
     margin-top: 3em;
 }
 
-    .login-text-frontpage p {
-        text-align: center;
-        font-size: 1.3em;
-        align-self: center;
-        padding-bottom: .5em;
-        color: rgb(240,248,255);
-    }
+.login-text-frontpage p {
+    text-align: center;
+    font-size: 1.3em;
+    align-self: center;
+    padding-bottom: .5em;
+    color: rgb(240,248,255);
+}
 
-        .login-text-frontpage p:first-child {
-            font-size: 1.5em;
-        }
+.login-text-frontpage p:first-child {
+    font-size: 1.5em;
+}
 
 #front-page .login-text-frontpage p > a {
     color: #FCAA67;
@@ -388,107 +390,116 @@ b {
     padding-top: 5em;
 }
 
-    #random-messages > * {
-        font-size: 1.3em;
-        color: rgb(240,248,255);
-    }
+#random-messages > * {
+    font-size: 1.3em;
+    color: rgb(240,248,255);
+}
 
 /* FRONTPAGE STYLING END */
 
 
 /* GAMES STYLING START */
 .content h1 {
-    grid-column: 2 / 11;
+    grid-column: 3 / 9;
     font-family: Ubuntu;
     font-size: 2.7em;
     padding: 1em 0 .5em;
     grid-row: 1 / 2;
 }
 
+#games h1 {
+    color: #548687;
+}
+
 .create-new {
-    grid-column: 11 / 12;
+    grid-column: 9 / 10;
     justify-self: end;
     grid-row: 1 / 2;
     align-self: flex-end;
-    padding-bottom: .5em;
+    padding-bottom: 1em;
+    color: #FCAA67;
+    text-transform: uppercase;
+}
+
+.create-new a, .create-new:visited {
+    color: #548687;
 }
 
 
 /* game genre */
 .genre {
-    grid-column: 2 / 12;
+    grid-column: 3 / 11;
 }
 
 /* game lists */
 .game-list {
-    grid-column: 2 / 12;
+    grid-column: 3 / 10;
     display: grid;
     grid-template-columns: 1 / 12;
     grid-gap: 5em;
 }
 
-.game {
-    justify-self: center;
+.game:nth-child(odd) {
+    grid-column: 1 / 6;
+    justify-self: start;
 }
 
-    .game:nth-child(3n+1) {
-        grid-column: 1 / 5;
-    }
+.game:nth-child(even) {
+    grid-column: 7 / 13;
+    justify-self: end;
+}
 
-    .game:nth-child(3n+2) {
-        grid-column: 5 / 9;
-    }
+.game figure {
+    width: 25em;
+    height: 25em;
+    background: rgba(252,170,103,.5);
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    border-radius: .3em;
+}
 
-    .game:nth-child(3n+3) {
-        grid-column: 9 / 13;
-    }
+.game figure:hover {
+    background: rgb(252,170,103);
+}
 
-    .game figure {
-        width: 25em;
-        height: 25em;
-        background: #ccdadb;
-        position: relative;
-        display: grid;
-        overflow: hidden;
-    }
+.game figure img {
+    max-width: 20em;
+    max-height: 15em;
+    display: block;
+    justify-self: center;
+    align-self: center;
+}
 
-        .game figure img {
-            max-width: 20em;
-            max-height: 15em;
-            display: block;
-            justify-self: center;
-            align-self: center;
-        }
+.game figcaption {
+    position: absolute;
+    bottom: 0;
+    height: 5em;
+    background: #548687;
+    width: 100%;
+    padding: .5em;
+    display: none;
+}
 
-    .game figcaption {
-        position: absolute;
-        bottom: 0;
-        height: 5em;
-        background: #548687;
-        width: 100%;
-        padding: .5em;
-        display: none;
-    }
+.game figure:hover figcaption {
+    display: block;
+}
 
-    .game figure:hover figcaption {
-        display: block;
-    }
+.game figcaption h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-bottom: .5em;
+}
 
-    .game figcaption h2 {
-        font-size: 1.6em;
-        font-weight: bold;
-        padding-bottom: .5em;
-    }
+.game figcaption img {
+    display: inline-block;
+    height: .9em;
+}
 
-    .game figcaption img {
-        display: inline-block;
-        height: .9em;
-    }
-
-    .game figcaption i {
-        font-size: 1em;
-        color: #ffffc7;
-    }
+.game figcaption i {
+    font-size: 1em;
+    color: #ffffc7;
+}
 
 /* SPECIFIC GAME */
 
@@ -525,6 +536,21 @@ b {
     width: 25em;
     height: 25em;
     border-radius: 0;
+}
+
+/* CREATE A GAME */
+
+.text-box textarea {
+    width: 25em;
+    max-width: 25em;
+    min-width: 25em;
+    height: 10em;
+    min-height: 10em;
+    padding: .7em .5em;
+    border-radius: .3em;
+    overflow-x: hidden;
+    font-family: 'Open Sans';
+    text-align: left;
 }
 
 /* REQUEST A GAME */
@@ -567,6 +593,7 @@ b {
     border: 1px;
     width: 25em;
     background: #fff;
+    text-align: left;
 }
 
 .text-box form label {
