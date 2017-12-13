@@ -457,32 +457,35 @@
     justify-self: center;
 }
 
-    .game-images figure {
-        height: 5em;
-        width: 5em;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 0 1em 1em 0;
-    }
+.game-images figure {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 1em 1em 0;
+}
 
-        .game-images figure:first-child {
-            width: 30em;
-            height: 30em;
-            border-radius: 0;
-            background: lightblue;
-            display: grid;
-            justify-items: center;
-            align-items: center;
-        }
+.game-images figure:first-child {
+    width: 30em;
+    height: 30em;
+    border-radius: 0;
+    background: lightblue;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
 
-        .game-images figure img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
+.game-images figure img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
 
-        .game-images figure:first-child img {
-            width: 25em;
-            height: 25em;
-            border-radius: 0;
-        }
+.game-images figure:first-child img {
+    width: 25em;
+    height: 25em;
+    border-radius: 0;
+}
+
+/* REQUEST A GAME */
+

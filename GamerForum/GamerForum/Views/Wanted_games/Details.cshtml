@@ -5,34 +5,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="content">
+    <h1>Details</h1>
 
-<div>
-    <h4>Wanted_games</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Wanted_Game_Name)
-        </dt>
+    <div>
+        <h4>Wanted_games</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Wanted_Game_Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Wanted_Game_Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Wanted_Game_Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Wanted_Game_Url)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Wanted_Game_Url)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Wanted_Game_Url)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Wanted_Game_Url)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @if (User.IsInRole("Administrator"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Wanted_Game_Id }) <br />
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Wanted_Game_Id })
+        }
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
 </div>
-<p>
-    @if (User.IsInRole("Administrator")) { 
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Wanted_Game_Id }) <br />
-    @Html.ActionLink("Delete", "Delete", new { id = Model.Wanted_Game_Id})
-    }
-    @Html.ActionLink("Back to List", "Index")
-</p>
