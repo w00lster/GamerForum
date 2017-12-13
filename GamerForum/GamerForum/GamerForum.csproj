@@ -384,7 +384,6 @@
     <Content Include="Views\Home\FrontpageLoggedin.cshtml" />
     <Content Include="Views\Shared\_Panel.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
-    <Content Include="Views\Games\SpecificGame.cshtml" />
     <Content Include="Views\Games\RequestGameForm.cshtml" />
     <Content Include="Views\Account\UserProfile.cshtml" />
     <Content Include="Views\Account\AdminProfile.cshtml" />

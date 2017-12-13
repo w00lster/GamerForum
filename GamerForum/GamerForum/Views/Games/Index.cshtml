@@ -22,7 +22,10 @@
             <div class="game">
                 <a href="~/Games/Details/@item.GameId">
                     <figure>
-                        <img src="~/Content/Image/1st & Goal/frontpic.jpg" alt="" />
+                        @if(item.Images.Count > 0) { 
+                        <img src="@item.Images.First().Image_path" alt="no image" />
+                        }
+                        <img src="" alt="No Image" />
                         <figcaption>
                             <h2>@item.Game_name</h2>
                             <p>

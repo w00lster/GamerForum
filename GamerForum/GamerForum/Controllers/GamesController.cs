@@ -17,12 +17,14 @@ namespace GamerForum.Controllers
         // GET: Games
         public ActionResult Index(string searchString)
         {
-            var games = from a in db.Games
+            var games = from a in db.Games.Include("Images")
                         select a;
-
+            
+            
             if (!string.IsNullOrEmpty(searchString))
             {
                 games = games.Where(s => s.Game_name.Contains(searchString));
+                
             }
             return View(games);
         }
