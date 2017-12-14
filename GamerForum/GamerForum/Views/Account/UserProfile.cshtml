@@ -9,11 +9,14 @@
     <div class="text-box">
         <div class="user-image">
             <img src="~/Content/Image/chess_piece_pawn.png" />
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> <p>Track this user for updates on his/her reviews</p>
+        </div>
+        <div class="track-user">
+            <p><i class="fa fa-plus-circle" aria-hidden="true"></i></p>
+            <p>Track this user for updates on his/her reviews</p>
         </div>
         <div class="user-info">
-            <p class="edit-profile"><a href="#">[edit profile]</a></p>
             <h1>[Username]</h1>
+            <p class="edit-profile"><a href="#">[edit profile]</a></p>
             <p><b>E-mail:</b> @User.Identity.GetUserName()</p>
             @if (User.IsInRole("Administrator")) {
             <p><b>User level:</b> Administrator</p>
@@ -22,7 +25,9 @@
             {
                 <p><b>User level: User</b></p>
             }
-            <h3>Games you have reviewed</h3>
+        </div>
+        <div class="games-reviewed">
+            <h3>Games [username] have reviewed</h3>
             <div class="user-reviewed-game">
                 <a href="~/Games/Details/22" target="_blank"><img src="~/Content/Image/Checkers/frontpic.jpg" /></a>
                 <h4 class="game-name">Checkers</h4>

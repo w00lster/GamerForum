@@ -11,45 +11,32 @@
         <h1>Requested games</h1>
 
         <p>
-            <a href="~/Wanted_games/Create"><i class="fa fa-plus" aria-hidden="true"></i> Create new</a>
+            <a href="~/Wanted_games/Create"><i class="fa fa-plus" aria-hidden="true"></i> Request new game</a>
         </p>
-        <table>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Link
-                </th>
-                <th>
-                    Request date
-                </th>
-                <th></th>
-            </tr>
-
+        <div class="wanted-games">
+            <p class="wg-name">Name</p>
+            <p class="wg-date">Date</p>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Wanted_Game_Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Wanted_Game_Url)
-                    </td>
-                    <td>
-                        [date requested]
-                    </td>
-                    <td>
+                <div class="wanted-game">
+                    <p class="wg-name">Name</p>
+                    <p class="wg-name-detail">@Html.DisplayFor(modelItem => item.Wanted_Game_Name)</p>
+                    <p class="wg-date">Date</p>
+                    <p class="wg-date-detail">00.00.0000</p>
+                    <p class="wg-add">
                         @if (User.IsInRole("Administrator"))
                         {
                             <a href="~/Games/Create/@item.Wanted_Game_Id"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                        }
+                    </p>
+                    <p class="wg-delete">
+                        @if (User.IsInRole("Administrator"))
+                        {
                             <a href="~/Wanted_games/Delete/@item.Wanted_Game_Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         }
-
-
-                    </td>
-                </tr>
+                    </p>
+                </div>
             }
-        </table>
+        </div>
     </div>
 </div>

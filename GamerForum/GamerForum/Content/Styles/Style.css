@@ -42,6 +42,11 @@ b {
     font-weight: bold;
 }
 
+.text-box .text-danger * {
+    color: #B0413E;
+    font-weight: bold;
+}
+
 /* TOP BAR */
 .top-bar img {
     grid-column: 1 / 2;
@@ -150,7 +155,7 @@ b {
 }
 
 .panel-bar * {
-    color: rgb(240,248,255);
+    color: #FCAA67;
 }
 
 .panel-bar a, .panel-bar a:hover, .panel-bar a:visited {
@@ -596,6 +601,7 @@ b {
 
 .game-info {
     padding-top: 2.2em;
+    grid-column: 2 / 4;
 }
 
 .game-info .stars p {
@@ -708,14 +714,19 @@ b {
 /* REQUESTED GAMES */
 #requested-games-index .text-box {
     grid-column: 3 / 10;
+    display: grid;
+    grid-template-columns: auto 7em;
 }
 
-#requested-games-index h1 {
-    float: left;
+#requested-games-index .text-box > h1:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
-#requested-games-index h1 + p {
-    float: right;
+#requested-games-index .text-box > p:first-child {
+    grid-column: 2 / 3;
+    justify-self: end;
+    grid-row: 1 /2;
 }
 
 #requested-games-index a {
@@ -730,13 +741,69 @@ b {
     text-align: left;
 }
 
-#requested-games-index table {
-    width: 100%;
+#requested-games-index .wanted-games {
+    display: grid;
+    grid-column: 1 / 3;
+    grid-template-columns: 25em auto 2em 2em;
 }
 
-#requested-games-index tr{
+#requested-games-index .wanted-game {
     border: 1px solid #473335;
-    border-radius: 10px;
+    border-bottom: 0;
+    display: grid;
+    grid-template-columns: 25em auto 2em 2em;
+    grid-column: 1 / 5;
+    padding: .5em;
+}
+
+#requested-games-index .wanted-game:nth-child(odd) {
+    background: rgba(255,255,255,.4);
+}
+
+#requested-games-index .wanted-game:last-child {
+    border-bottom: 1px solid #473335;
+}
+
+#requested-games-index .text-box p {
+    margin: .3em;
+}
+
+.wanted-game .wg-name, .wanted-game .wg-date {
+    display: none;
+}
+
+.wg-name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-weight: bold;
+    padding: 0 .5em;
+}
+
+.wg-name-detail {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.wg-date {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-weight: bold;
+    padding: 0 .5em;
+}
+
+.wg-date-detail {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.wg-add {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.wg-delete {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
 }
 
 #requested-games-index td, #requested-games-index th {
@@ -796,14 +863,24 @@ b {
     text-align: left;
 }
 
-.edit-profile {
-    float: right;
+#user-profile h1 {
+    padding: 0 0 .1em;
+}
+
+#user-profile .text-box p {
+    margin-bottom: 0;
+}
+
+#user-profile .text-box h3 {
+    margin-top: 0;
+}
+
+#user-profile p.edit-profile {
+    margin-bottom: .5em;
 }
 
 .user-image {
-    display: grid;
-    justify-items: center;
-    align-content: start;
+    justify-self: center;
 }
 
 .user-image img {
@@ -813,23 +890,33 @@ b {
     margin-bottom: 1.5em;
 }
 
-.user-image i {
+.track-user {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.track-user i {
     font-size: 2.5em;
     cursor: pointer;
     padding-bottom: .2em;
 }
 
-.user-image i:hover {
+.track-user i:hover {
     color: #548687;
 }
 
-#user-profile .user-image p {
+#user-profile .track-user p {
     text-align: center;
+}
+
+.games-reviewed {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
 
 .user-reviewed-game {
     display: grid;
-    grid-template-columns: 10em auto 7em;
+    grid-template-columns: 10em repeat(2, auto);
     grid-template-rows: repeat(3, auto);
     grid-gap: 0 1em;
     align-content: start;
@@ -850,7 +937,6 @@ b {
 .user-reviewed-game a {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
-    width: 10em;
 }
 
 .user-reviewed-game i {
@@ -861,7 +947,6 @@ b {
 .user-reviewed-game img {
     width: 100%;
     border-radius: .3em;
-    max-height: 7em;
 }
 
 .user-reviewed-game .game-name {
@@ -882,11 +967,13 @@ b {
 .user-reviewed-game .see-review {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
+    justify-self: end;
 }
 
 .user-reviewed-game .edit-review {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    justify-self: end;
 }
 
 .back-to-list {
@@ -916,6 +1003,11 @@ b {
     color: #FFFFC7;
 }
 
+@media (max-width: 1555px) {
+    #user-profile .text-box {
+        grid-template-columns: 16em auto;
+    }
+} 
 
 @media (max-width: 1500px) {
     .front_page_circles .circle-wrapper {
@@ -929,6 +1021,27 @@ b {
 
     .back.face {
         padding: 4.4em 1em;
+    }
+}
+
+@media (max-width: 1444px) {
+    #user-profile .text-box {
+        grid-template-columns: 14em auto;
+    }
+
+    .user-image img {
+        width: 11em;
+        height: 11em;
+        margin-bottom: 1em;
+    }
+
+    .track-user {
+        margin-bottom: 1em;
+    }
+
+    .games-reviewed {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
     }
 }
 
@@ -1001,6 +1114,32 @@ b {
     .text-box {
         grid-column: 3 / 8;
     }
+
+    /* specific game */
+    #specific-game .text-box {
+        grid-template-columns: 15em auto 6em;
+        grid-column: 3 / 11;
+    }
+
+    .game-images figure:first-child {
+        width: 15em;
+        height: 15em;
+        margin: 0;
+    }
+
+    .game-images figure:first-child img {
+        width: 13em;
+        height: 13em;
+    }
+
+    .game-images figure {
+        width: 3em;
+        height: 3em;
+    }
+
+    #specific-game .game-info {
+        padding: 0;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -1037,6 +1176,55 @@ b {
     .text-box {
         grid-column: 3 / 9;
     }
+
+    #requested-games-index .wanted-game {
+        grid-template-columns: 6em auto 2em;
+    }
+
+    .wanted-games > .wg-name, .wanted-games > .wg-date {
+        display: none;
+    }
+
+    .wanted-game .wg-name, .wanted-game .wg-date {
+        display: block;
+    }
+
+    .wg-name {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        font-weight: bold;
+        padding: 0 .5em;
+    }
+
+    .wg-name-detail {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .wg-date {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        font-weight: bold;
+        padding: 0 .5em;
+    }
+
+    .wg-date-detail {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .wg-add {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .wg-delete {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+
+
+
 }
 
 /* iPad landscape */
@@ -1123,6 +1311,32 @@ b {
     .text-box h3 {
         margin: 1em 0 .5em;
     }
+
+    #user-profile .text-box {
+        grid-column: 2 / 12;
+    }
+
+    #specific-game .text-box {
+        grid-column: 2 / 12;
+        grid-template-columns: 15em auto;
+    }
+
+    #specific-game h1 {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        padding: 0 0 .2em;
+    }
+
+    #specific-game .text-box img {
+        margin: 0;
+    }
+
+    .make-review {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        margin-bottom: .5em;
+    }
+
 }
 
 @media (max-width: 920px) {
@@ -1187,6 +1401,58 @@ b {
     /* text box */
     .text-box {
         grid-column: 3 / 10;
+    }
+
+    /* user profile */
+    .user-reviewed-game {
+        grid-template-rows: repeat(5, auto);
+        height: auto;
+    }
+
+    .game-name {
+        grid-column: 2 / 3;
+    }
+
+    .game-rating {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .your-rating {
+        grid-column: 2 / 4;
+        grid-row: 3 / 4;
+    }
+
+    .user-reviewed-game .see-review {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        justify-self: start;
+    }
+
+    .user-reviewed-game .edit-review {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+        justify-self: start;
+    }
+
+    #requested-games-index .text-box > h1:first-child {
+        padding-bottom: .2em;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    #requested-games-index .text-box > p:first-child {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        margin-bottom: 1em;
+    }
+
+    #requested-games-index .text-box {
+        grid-column: 2 / 11;
+    }
+
+    #requested-games-index .wanted-games {
+        grid-template-columns: auto;
     }
 }
 
@@ -1275,7 +1541,6 @@ b {
 
     .panel-bar i {
         font-size: 2em;
-        color: #FCAA67;
     }
 
     .panel-bar ul li.right-panel-elements {
@@ -1316,8 +1581,43 @@ b {
         font-size: 2em;
     }
 
-    .text-box img {
+    #delete-game .text-box img {
         width: 15em;
+    }
+
+    #user-profile .text-box b {
+        display: block;
+    }
+
+    #user-profile .text-box {
+        grid-template-columns: 10em auto;
+    }
+
+    .user-image img {
+        width: 9em;
+        height: 9em;
+    }
+
+    .track-user i {
+        font-size: 2em;
+    }
+
+    .track-user p {
+        font-size: .8em;
+    }
+
+    .user-reviewed-game {
+        grid-template-columns: 7em repeat(2, auto);
+    }
+
+    .game-images {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+    }
+
+    .game-info {
+        grid-column: 1 / 4;
+        grid-row: 4 / 5;
     }
 }
 
@@ -1379,6 +1679,7 @@ b {
     .text-box {
         grid-column: 2 / 12;
     }
+
 }
 
 @media (max-width: 570px) {
@@ -1420,9 +1721,97 @@ b {
         min-width: 20em;
     }
 
-    .text-box img {
+    #delete-game .text-box img {
         width: 12em;
     }
+
+    /* user profile */
+    .user-image {
+        display: none;
+    }
+
+    .track-user {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    .user-info {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        margin-bottom: 1em;
+    }
+
+    .games-reviewed h3 {
+        font-size: 1.1em;
+    }
+
+    .user-reviewed-game {
+        grid-template-rows: repeat(6, auto);
+    }
+
+    .games-reviewed .game-name {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        margin-bottom: .7em;
+    }
+
+    .games-reviewed a {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .games-reviewed .game-rating {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+    }
+
+    .games-reviewed .your-rating {
+        grid-column: 1 / 4;
+        grid-row: 4 / 5;
+    }
+
+    .games-reviewed .see-review {
+        grid-column: 1 / 4;
+        grid-row: 5 / 6;
+    }
+
+    .games-reviewed .edit-review {
+        grid-column: 1 / 4;
+        grid-row: 6 / 7;
+    }
+
+    .game-images figure:first-child {
+        width: 10em;
+        height: 10em;
+    }
+
+    .game-images figure:first-child img {
+        width: 8em;
+        height: 8em;
+    }
+
+    .wg-delete {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+
+    .wg-add {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .wg-add i {
+        margin-left: .3em;
+    }
+
+    #requested-games-index .wanted-game {
+        grid-template-columns: 4em auto 2em;
+    }
+
+    #requested-games-index .wanted-game i {
+        font-size: 1.5em;
+    }
+
 }
 
 @media (max-width: 450px) {
