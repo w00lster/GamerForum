@@ -42,7 +42,7 @@
                     <td>
                         @if (User.IsInRole("Administrator"))
                         {
-                            <a href="~/Wanted_games/Edit/@item.Wanted_Game_Id"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                            <a href="~/Games/Create/@item.Wanted_Game_Id"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                             <a href="~/Wanted_games/Delete/@item.Wanted_Game_Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         }
 

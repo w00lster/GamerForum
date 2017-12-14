@@ -14,9 +14,9 @@
         <div class="user-info">
             <p class="edit-profile"><a href="#">[edit profile]</a></p>
             <h1>[Username]</h1>
-            <p><b>E-mail:</b>@User.Identity.GetUserName()</p>
+            <p><b>E-mail:</b> @User.Identity.GetUserName()</p>
             @if (User.IsInRole("Administrator")) {
-            <p><b>User level: Administrator</b></p>
+            <p><b>User level:</b> Administrator</p>
             }
             @if (User.IsInRole("User"))
             {

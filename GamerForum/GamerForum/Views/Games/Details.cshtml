@@ -6,12 +6,13 @@
 }
 
 <div id="specific-game" class="content">
-    <p class="back-to-list">
+    <div class="back-to-list">
+        <p><a href="~/Games/Index"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to list</a></p>
         @if (User.IsInRole("Administrator")) { 
-        @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) 
+        <p><a href="~/Games/Edit/@Model.GameId"><i class="fa fa-pencil-square-o"></i>Edit game</a></p>
+        <p><a href="~/Games/Delete/@Model.GameId"><i class="fa fa-trash"></i>Delete game</a></p>
         }
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    </div>
 
     <div class="text-box">
         <h1>@Html.DisplayFor(model => model.Game_name) <span>@Html.DisplayFor(model => model.Year_releashed)</span></h1>

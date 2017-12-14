@@ -120,6 +120,9 @@ namespace GamerForum.Controllers
             {
                 return HttpNotFound();
             }
+
+            games.Images = db.Images.Where(i => i.GameId == games.GameId).ToArray();
+
             return View(games);
         }
 

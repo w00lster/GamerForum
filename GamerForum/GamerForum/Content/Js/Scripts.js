@@ -25,4 +25,8 @@ if (document.getElementById("front-page")) {
     document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
 } else if (document.getElementById("edit-game")) {
     document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
+} else if (document.getElementById("delete-wanted-game")) {
+    document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
+} else if (document.getElementById("delete-game")) {
+    document.getElementById("body-wrapper").style.backgroundImage = "url(../../Content/Image/boardgameBackground3.jpg)";
 }
